@@ -84,6 +84,24 @@ function AiDetection() {
       date: '2023-07-08',
       status: 'completed',
     },
+     {
+      id: 10,
+      title: 'Social Media Post Draft',
+      aiScore: 76,
+      humanScore: 24,
+      user: 'alex.brown@example.com',
+      date: '2023-07-09',
+      status: 'completed',
+    },
+     {
+      id: 11,
+      title: 'Customer Support Response Template',
+      aiScore: 58,
+      humanScore: 42,
+      user: 'emma.wilson@example.com',
+      date: '2023-07-10',
+      status: 'completed',
+    },
   ];
 
   // State for search
@@ -97,7 +115,7 @@ function AiDetection() {
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const paginatedData = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
@@ -105,7 +123,7 @@ function AiDetection() {
   );
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6 px-6">
       <div>
         <h1 className="text-2xl font-semibold text-gray-800">
           AI Detection Scores
@@ -115,15 +133,8 @@ function AiDetection() {
         </p>
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-          <div className="flex space-x-2">
-            <button className="px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 text-sm flex items-center hover:bg-gray-50">
-              Filter
-            </button>
-            <button className="px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 text-sm flex items-center hover:bg-gray-50">
-              Export
-            </button>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-end items-start sm:items-center mb-6 gap-4">
+         
           <div className="relative w-full sm:w-64">
             <input
               type="text"
