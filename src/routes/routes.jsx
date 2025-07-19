@@ -14,11 +14,12 @@ import UserSettings from "../Pages/UserDashboard/UserSettings";
 import AdminOverview from "../Layout/Admin/AdminOverview";
 import AiDetection from "../Layout/Admin/AiDetection";
 import Humanization from "../Layout/Admin/Humanization";
-import Biling from "../Layout/Admin/Biling";
+// import Billing from "../Layout/Admin/Billing/Billing";
 import SeoInsights from "../Layout/Admin/SeoInsights";
 import Settings from "../Layout/Admin/Settings";
 import UserAndRoles from "../Layout/Admin/UserAndRoles";
 import AddRols from "../Layout/Admin/AddRols";
+import Billing from "../Layout/Admin/Billing/Billing";
 
 
 export const router = createBrowserRouter([
@@ -40,7 +41,7 @@ export const router = createBrowserRouter([
       {index: true, element: <AdminOverview/>},
        {path: 'ai_detection', element: <AiDetection/>},
        {path: 'humanization', element: <Humanization/>},
-       {path: 'biling', element: <Biling/>},
+       {path: 'biling', element: <Billing/>},
        {path: 'user_roles', element: <UserAndRoles/>},
        {path: 'seo_insights', element: <SeoInsights/>},
        {path: 'settings', element: <Settings/>},
