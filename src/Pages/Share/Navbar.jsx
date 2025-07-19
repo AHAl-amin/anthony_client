@@ -1,15 +1,23 @@
+
+
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { CiSettings } from 'react-icons/ci';
 
 const Navbar = () => {
-  const location = useLocation(); 
-  const activeClass = 'text-gray-600 border-b-2 border-[#2045AD]'; 
+  const location = useLocation();
+  const activeClass = 'text-gray-600 border-b-2 border-[#2045AD]';
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <nav className="bg-[#FFFFFF] py-3 px-6 shadow-md sticky top-0 z-50 shadow-black/20">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          {/* <img src="https://i.ibb.co/20mKHM8m/logo-final-2.png" alt="Text Humanizer Pro" className="h-18 w-auto" />  */}
-          <h1 className='text-[#2A5CE6] font-bold text-3xl '>Text Humanizer Pro</h1>
+          <h1 className='text-[#2A5CE6] font-bold text-3xl'>Text Humanizer Pro</h1>
         </div>
 
         <div className="hidden md:flex space-x-8">
@@ -21,7 +29,7 @@ const Navbar = () => {
           </Link>
           <div className="relative">
             <Link
-            to="/pricing"
+              to="/pricing"
               className={`text-lg ${location.pathname.includes('pricing') ? activeClass : 'text-gray-400'}`}
             >
               Pricing
@@ -35,10 +43,10 @@ const Navbar = () => {
           </div>
           <div className="relative">
             <Link
-            to="/user_dashboard"
+              to="/user_dashboard"
               className={`text-lg ${location.pathname.includes('user_dashboard') ? activeClass : 'text-gray-400'}`}
             >
-             Dashboard
+              Dashboard
             </Link>
             <div className="absolute top-full left-0 w-40 bg-white shadow-lg mt-2 hidden group-hover:block">
               <ul>
@@ -47,7 +55,6 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-         
         </div>
 
         <div className="md:flex items-center space-x-4">
@@ -57,6 +64,45 @@ const Navbar = () => {
           >
             sign in
           </Link>
+          <div className="relative">
+            <button
+              onClick={toggleDropdown}
+              className="text-lg  text-gray-500 py-2 px-4 rounded-md flex items-center"
+            >
+              <img
+                src="https://i.ibb.co/0nZ0Z0Z/user-placeholder.png"
+                alt="User"
+                className="h-10 w-10 rounded-full mr-2"
+              />
+              User
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute top-full  w-48 bg-white shadow-lg mt-2 rounded-md z-50">
+               
+                <ul>
+                  <li>
+                    <Link
+                      to="/user_dashboard/user_setting"
+                      className="px-4 py-2 text-gray-800 hover:bg-gray-100 flex gap-1 items-center"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <CiSettings className='size-5' />Profile Settings
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/signin"
+                      className="block px-4 py-2 text-gray-800  hover:bg-gray-100"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+       
         </div>
       </div>
     </nav>

@@ -5,25 +5,26 @@ import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { FaUserGroup } from "react-icons/fa6";
-import { BadgePercent, Bell, CalendarDays, ChevronDown, ChevronsLeft, ChevronsRight, MessagesSquare } from "lucide-react";
+import { BadgePercent, Bell, CalendarDays, ChevronDown, ChevronsLeft, ChevronsRight, LineChartIcon, MessagesSquare, RefreshCwIcon, SearchCheckIcon, SettingsIcon, UsersIcon } from "lucide-react";
 import { RiUserSettingsLine } from "react-icons/ri";
 import { BsFillBarChartFill } from "react-icons/bs";
+import { PiShoppingBagOpenThin } from "react-icons/pi";
 
 export default function DashboardLayout() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selectedItem, setSelectedItem] = useState("Dashboard");
-  const location = useLocation(); 
-  const navigate = useNavigate(); 
+  const location = useLocation();
+  const navigate = useNavigate();
   const menuItems = [
     {
       items: [
-        { name: "Dashboard", icon: <LuLayoutDashboard size={20} />, path: "/home" },
-        { name: "Users & Therapists", icon: <FaUserGroup size={20} />, path: "/client_info" },
-        { name: "Bookings & Payments", icon: <CalendarDays size={20} />, path: "/booking_info" },
-        { name: "Roles & Permissions", icon: <RiUserSettingsLine size={20} />, path: "/roles" },
-        { name: "Analytics", icon: <BsFillBarChartFill size={20} />, path: "/analytics" },
-        { name: "Promotions", icon: <BadgePercent size={20} />, path: "/promotions" },
-        { name: "Dispute Management", icon: <MessagesSquare size={20} />, path: "/dispute_management"},
+        { name: "Overview", icon: <LuLayoutDashboard size={20} />, path: "/admin_dashboard" },
+        { name: "AI Detection", icon: <SearchCheckIcon size={20} />, path: "/admin_dashboard/ai_detection" },
+        { name: "Humanization", icon: <RefreshCwIcon size={20} />, path: "/admin_dashboard/humanization" },
+        { name: "Billing", icon: <PiShoppingBagOpenThin  size={20} />, path: "/admin_dashboard/biling" },
+        { name: "Users & Roles", icon: <UsersIcon size={20} />, path: "/admin_dashboard/user_roles" },
+        { name: "SEO Insights", icon: <LineChartIcon size={20} />, path: "/admin_dashboard/seo_insights" },
+        { name: "Settings", icon: <SettingsIcon size={20} />, path: "/admin_dashboard/settings" },
       ],
     },
   ];
@@ -44,60 +45,63 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen  bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB]">
       {/* Sidebar */}
       <aside
-        className={`${
-          isCollapsed ? "w-20" : "w-64"
-        } bg-white border-r border-gray-200 transition-all duration-500 ease-in-out`}
+        className={` ${isCollapsed ? "w-20" : "w-60"
+          } transition-all duration-500 ease-in-out `}
       >
         {/* Logo */}
         <div className="h-16 flex items-center px-4">
-          <div className="flex items-center ms-1 gap-2 mt-20">
+          <div className="flex items-center ms-1 gap-2 mt-8">
             <div
-              className={`transform transition-all duration-500 ${
-                isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
-              }`}
+              className={`transform transition-all duration-500 ${isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
+                }`}
             >
-              <img src="https://i.ibb.co.com/6JmxrwwH/Group-1686551099-1.png" alt="Logo" />
+              <img src="../../../public/image/home/logo.png" alt="Logo" />
             </div>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="p-4 md:mt-20">
+        <nav className=" mt-6 ">
           {menuItems.map((section, idx) => (
             <div key={idx} className="mb-8">
               <ul className="space-y-2">
                 {section.items.map((item, itemIdx) => (
                   <li key={itemIdx}>
+
+
                     <Link
                       to={item.path}
                       onClick={() => handleItemClick(item.name, item.path)}
-                      className={`flex items-center gap-3 px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 group relative ${
-                        selectedItem === item.name ? "bg-gray-200 text-gray-900 font-semibold" : ""
-                      }`}
+                      className={`flex items-center gap-3 px-6 py-2 rounded-lg group relative
+    ${selectedItem === item.name
+                          ? "text-[#FFFFFF] border-r-4 border-[#FFFFFF] bg-[#FFFFFF1F]"
+                          : "text-[#FFFFFF] hover:bg-[#FFFFFF1F]"
+                        }`}
                     >
                       <span
-                        className={`group-hover:text-gray-700 transition-colors duration-300 ${
-                          selectedItem === item.name ? "text-gray-900" : "text-gray-500"
-                        }`}
+                        className={`transition-colors duration-300 ${selectedItem === item.name ? "text-[#FFFFFF]" : "text-[#FFFFFF]"
+                          }`}
                       >
                         {item.icon}
                       </span>
+
                       <span
-                        className={`transform transition-all duration-500 ${
-                          isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
-                        } whitespace-nowrap`}
+                        className={`transform transition-all duration-500 whitespace-nowrap ${isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
+                          }`}
                       >
                         {item.name}
                       </span>
+
                       {item.badge && !isCollapsed && (
                         <span className="ml-auto bg-red-500 text-white text-xs font-semibold rounded-full px-2 py-0.5">
                           {item.badge}
                         </span>
                       )}
                     </Link>
+
                   </li>
                 ))}
               </ul>
@@ -125,8 +129,8 @@ export default function DashboardLayout() {
               </div>
             </div>
             <div className="flex items-center gap-4 me-10">
-              <button className="p-2 bg-[#FAE08C1A] hover:bg-[#f8de91] border-2 border-[#B28D2833] rounded-full transition-colors duration-300">
-                <Bell size={24} className="text-[#B28D28]" />
+              <button className="p-2 bg-[#FAE08C1A]  border-2 border-[#2563EB] rounded-full transition-colors duration-300">
+                <Bell size={24} className="text-[#2563EB]" />
               </button>
               <div className="flex items-center justify-center gap-2">
                 <div className="w-12">

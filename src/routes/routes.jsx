@@ -7,9 +7,16 @@ import DashboardLayout from "../Layout/Admin/DashboardLayout";
 import EmailVerification from "../Pages/Authentication/EmailVerification";
 import OTP_Verification from "../Pages/Authentication/OTP_Verification";
 import ResetPassword from "../Pages/Authentication/ResetPassword";
-import Admin_Home from "../Layout/Admin/Admin_Home";
+
 import Pricing from "../Pages/Pricing/Pricing";
 import UserDashboardHome from "../Pages/UserDashboard/UserDashboardHome";
+import UserSettings from "../Pages/UserDashboard/UserSettings";
+import AdminOverview from "../Layout/Admin/AdminOverview";
+import AiDetection from "../Layout/Admin/AiDetection";
+import Humanization from "../Layout/Admin/Humanization";
+import Biling from "../Layout/Admin/Biling";
+import SeoInsights from "../Layout/Admin/SeoInsights";
+import Settings from "../Layout/Admin/Settings";
 // import UserDashboardHome from "../Pages/UserDashboard.jsx/UserDashboardHome";
 // import UserDashboardHome from "../Pages/UserDashboard.jsx/UserDashboardHome";
 // import UserDashboardHome from "../Pages/UserDashboard/UserDashboardHome";
@@ -22,16 +29,23 @@ export const router = createBrowserRouter([
         children: [
           {path: '/', element: <Home/>},
           {path: 'pricing', element: <Pricing/>},
-          {path: 'user_dashboard', element: <UserDashboardHome/>}
+          {path: 'user_dashboard', element: <UserDashboardHome/>},
+          {path: 'user_dashboard/user_setting', element: <UserSettings/>}
       ]
     },
 
     {
-        path: '/dashboard',
+        path: '/admin_dashboard',
         element: <DashboardLayout />,
       children: [
-      {index: true, element: <Admin_Home />},
-      {path: 'admin_home', element: <Admin_Home/>}
+      {index: true, element: <AdminOverview/>},
+       {path: 'ai_detection', element: <AiDetection/>},
+       {path: 'humanization', element: <Humanization/>},
+       {path: 'biling', element: <Biling/>},
+       {path: 'user_roles', element: <Biling/>},
+       {path: 'seo_insights', element: <SeoInsights/>},
+       {path: 'settings', element: <Settings/>},
+      
         ]
     },
 
