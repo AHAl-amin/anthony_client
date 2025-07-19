@@ -17,10 +17,9 @@ import Humanization from "../Layout/Admin/Humanization";
 import Biling from "../Layout/Admin/Biling";
 import SeoInsights from "../Layout/Admin/SeoInsights";
 import Settings from "../Layout/Admin/Settings";
-// import UserDashboardHome from "../Pages/UserDashboard.jsx/UserDashboardHome";
-// import UserDashboardHome from "../Pages/UserDashboard.jsx/UserDashboardHome";
-// import UserDashboardHome from "../Pages/UserDashboard/UserDashboardHome";
-  
+import UserAndRoles from "../Layout/Admin/UserAndRoles";
+import AddRols from "../Layout/Admin/AddRols";
+
 
 export const router = createBrowserRouter([
     {
@@ -42,9 +41,10 @@ export const router = createBrowserRouter([
        {path: 'ai_detection', element: <AiDetection/>},
        {path: 'humanization', element: <Humanization/>},
        {path: 'biling', element: <Biling/>},
-       {path: 'user_roles', element: <Biling/>},
+       {path: 'user_roles', element: <UserAndRoles/>},
        {path: 'seo_insights', element: <SeoInsights/>},
        {path: 'settings', element: <Settings/>},
+       {path: 'add_rols', element: <AddRols/>},
       
         ]
     },

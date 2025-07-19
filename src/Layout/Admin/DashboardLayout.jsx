@@ -75,7 +75,7 @@ export default function DashboardLayout() {
                     <Link
                       to={item.path}
                       onClick={() => handleItemClick(item.name, item.path)}
-                      className={`flex items-center gap-3 px-6 py-2 rounded-lg group relative
+                      className={`flex items-center gap-3 px-6 py-2  group relative
     ${selectedItem === item.name
                           ? "text-[#FFFFFF] border-r-4 border-[#FFFFFF] bg-[#FFFFFF1F]"
                           : "text-[#FFFFFF] hover:bg-[#FFFFFF1F]"
