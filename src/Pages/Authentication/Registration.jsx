@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Mail, Lock, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
+import { FcGoogle } from 'react-icons/fc';
+import { FaApple } from 'react-icons/fa6';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -59,32 +61,34 @@ const Registration = () => {
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
       <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB] relative">
         <div className='flex justify-center h-full items-center'>
-          <img 
-            src="/image/auth/authLogo.png" 
-            alt="Logo" 
+          <img
+            src="/image/auth/authLogo.png"
+            alt="Logo"
             className="max-w-[200px] md:max-w-[300px]"
           />
         </div>
       </div>
 
       <div className="w-full md:w-[60%] bg-gradient-to-b from-[#4d60df70] via-[#e7e9ec85] to-[#c4c7ca27] flex items-center justify-center p-4 md:p-8">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-lg">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
               {error}
             </div>
           )}
-          
-          <div className="text-4xl md:text-5xl text-gray-400 font-bold text-center mb-2">
+
+          <div className="text-4xl md:text-5xl text-gray-400 font-bold text-center mb-10">
             <img src="../../../public/image/auth/auth2.png" alt="" />
           </div>
-          <p className="text-[#A8A8A8] text-base text-center mb-6">
-           Create an account 
+          <div className='mb-4'>
+            <p className="text-gray-800 text-center  font-bold text-2xl mb-1">
+              Create an account
 
-          </p>
-          <p>Have an account? <span className='text-blue-500'>Sign in</span></p>
+            </p>
+            <p className='text-center text-gray-400'>Have an account? <Link to="/login" className='text-blue-500'>Sign in</Link></p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 rounded-2xl">
+          <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
             <div>
               <label htmlFor="name" className="block text-gray-400 mb-1 text-lg font-medium">
                 Name
@@ -111,7 +115,7 @@ const Registration = () => {
                 className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
             </div>
-            
+
             <div>
               <label htmlFor="password" className="block text-gray-400 mb-1 text-lg font-medium">
                 Password
@@ -155,23 +159,53 @@ const Registration = () => {
                   {showConfirmPassword ? <IoEyeOffOutline size={20} /> : <IoEyeOutline size={20} />}
                 </button>
               </div>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`w-full bg-[#2A5CE6] text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+                  }`}
+              >
+                {isLoading ? 'Signing Up...' : 'Sign Up'}
+              </button>
+
+
+              <div className="flex items-center mt-4 ">
+                <input
+                  type="checkbox"
+                  id="agreeTerms"
+
+
+                  className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <label htmlFor="agreeTerms" className="ml-2 block text-sm text-gray-700">
+                  I agree to the{" "}
+                  <Link href="/terms" className="text-blue-600 hover:underline">
+                    Terms of Use
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/privacy" className="text-blue-600 hover:underline">
+                    Privacy Policy
+                  </Link>
+                </label>
+              </div>
+
+              <div className="relative flex items-center py-5">
+                <div className="flex-grow border-t border-gray-300"></div>
+                <span className="flex-shrink mx-4 text-gray-500 text-sm">Or continue with</span>
+                <div className="flex-grow border-t border-gray-300"></div>
+              </div>
+             <div className='flex flex-col justify-between items-center gap-6'>
+               <div className=' border border-gray-400 p-2 rounded-xl gap-2 text-center w-66 flex '>
+                <FcGoogle className='size-8' />
+                <p className='text-xl text-gray-400'>Continue with google</p>
+              </div>
+              <div className='border border-gray-400 p-2 rounded-xl gap-2 text-center w-66 flex '>
+                <FaApple  className='size-8'/>
+                <p className='text-xl text-gray-400'>Continue with Apple ID</p>
+              </div>
+             </div>
             </div>
-           
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={`w-full bg-[#2A5CE6] text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${
-                isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-              }`}
-            >
-              {isLoading ? 'Signing Up...' : 'Sign Up'}
-            </button>
-            <p className="text-base text-[#3E3E3E] text-center mt-4">
-              Already have an account?{' '}
-              <Link to="/signin" className="text-gray-400 underline hover:text-[#2A5CE6]">
-                Sign In
-              </Link>
-            </p>
+
           </form>
         </div>
       </div>
