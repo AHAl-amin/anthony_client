@@ -20,6 +20,9 @@ import Settings from "../Layout/Admin/Settings";
 import UserAndRoles from "../Layout/Admin/UserAndRoles";
 import AddRols from "../Layout/Admin/AddRols";
 import Billing from "../Layout/Admin/Billing/Billing";
+import AddPlan from "../Layout/Admin/Billing/AddPlan";
+import UserActivity from "../Layout/Admin/UserActivity";
+import UserActivityDetails from "../Layout/Admin/UserActivityDettails";
 
 
 export const router = createBrowserRouter([
@@ -46,12 +49,15 @@ export const router = createBrowserRouter([
        {path: 'seo_insights', element: <SeoInsights/>},
        {path: 'settings', element: <Settings/>},
        {path: 'add_rols', element: <AddRols/>},
+       {path: 'add_plan', element: <AddPlan/>},
+       {path: 'user_activity', element: <UserActivity/>},
+       {path: 'user_activity_dettails', element: <UserActivityDetails/>},
       
         ]
     },
 
     {path: '/sign_up', element: <Registration/>},
-    {path: '/login', element: <Login/>},
+    {path: '/signin', element: <Login/>},
     {path: '/verify', element: <EmailVerification/>},
     {path: '/otp_verify', element: <OTP_Verification/>},
     {path: '/reset_password', element: <ResetPassword/>},

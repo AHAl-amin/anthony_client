@@ -6,6 +6,8 @@ import { IoIosAdd, IoMdCheckmark } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import PaymentManagement from "./PaymentManagement";
+import PaymentHistory from "./PaymentHistory";
+import { Link } from "react-router-dom";
 
 const pricingData = [
   {
@@ -87,9 +89,9 @@ function Billing() {
       <div className="relative py-10">
         <div className="flex items-center justify-between">
           <h1 className="md:text-4xl text-2xl mb-2 md:font-bold text-[#111827]">Subscription Plans</h1>
-          <p className="text-lg text-gray-200 max-w-2xl text-center font-sans flex gap-2 items-center bg-[#2563EB] p-2 rounded-full cursor-pointer">
+          <Link to="/admin_dashboard/add_plan" className="text-lg text-gray-200 max-w-2xl text-center font-sans flex gap-2 items-center bg-[#2563EB] px-4 py-2 rounded-full cursor-pointer">
             <IoIosAdd className="size-8" />Add Plan
-          </p>
+          </Link>
         </div>
       </div>
       <div className="mx-auto">
@@ -213,6 +215,7 @@ function Billing() {
 
 
     <PaymentManagement/>
+    <PaymentHistory/>
     </section>
   );
 }

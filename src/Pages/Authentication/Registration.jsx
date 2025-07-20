@@ -1,109 +1,178 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Lock, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Lottie from 'lottie-react';
-import registration from '../../assets/registration.json'
+import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 
 const Registration = () => {
-  const [countryCode, setCountryCode] = useState('+1');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmPassword: '',
+    role: ''
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const countryCodes = [
-    { code: '+1', flag: '🇺🇸', name: 'United States' },
-    { code: '+44', flag: '🇬🇧', name: 'United Kingdom' },
-    { code: '+91', flag: '🇮🇳', name: 'India' },
-    { code: '+33', flag: '🇫🇷', name: 'France' },
-    { code: '+61', flag: '🇦🇺', name: 'Australia' },
-  ];
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setIsLoading(true);
+
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword || !formData.role) {
+      setError('All fields are required');
+      setIsLoading(false);
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      setIsLoading(false);
+      return;
+    }
+
+    // Add your API call here
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Handle successful registration
+    } catch (err) {
+      setError('Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="w-full bg-gray-900 md:w-1/2 h-[30vh] md:h-screen relative">
-      <Lottie
-        animationData={registration} 
-        loop={true} 
-          className="absolute inset-0 w-3/4 h-full mx-auto object-cover"></Lottie>
-        
-       
+    <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
+      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB] relative">
+        <div className='flex justify-center h-full items-center'>
+          <img 
+            src="/image/auth/authLogo.png" 
+            alt="Logo" 
+            className="max-w-[200px] md:max-w-[300px]"
+          />
+        </div>
       </div>
 
-      <div className="w-full md:w-1/2 min-h-[100vh] md:h-screen relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage: "url('https://i.ibb.co.com/cctYrsKY/Group-1686551056.png')",
-          }}
-        ></div>
+      <div className="w-full md:w-[60%] bg-gradient-to-b from-[#4d60df70] via-[#e7e9ec85] to-[#c4c7ca27] flex items-center justify-center p-4 md:p-8">
+        <div className="w-full max-w-md">
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
+              {error}
+            </div>
+          )}
+          
+          <div className="text-4xl md:text-5xl text-gray-400 font-bold text-center mb-2">
+            <img src="../../../public/image/auth/auth2.png" alt="" />
+          </div>
+          <p className="text-[#A8A8A8] text-base text-center mb-6">
+           Create an account 
 
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] md:h-screen p-8">
-          <div className="w-full max-w-xl space-y-8">
-            <div className="text-center">
-              <img
-                src="https://i.ibb.co.com/sp5JLnkF/Whats-App-Image-2025-02-22-at-9-25-22-AM-3.png"
-                alt="Logo"
-                className="mx-auto mb-16 w-3/4"
+          </p>
+          <p>Have an account? <span className='text-blue-500'>Sign in</span></p>
+
+          <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 rounded-2xl">
+            <div>
+              <label htmlFor="name" className="block text-gray-400 mb-1 text-lg font-medium">
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
             </div>
-
-            <form className="space-y-6 backdrop-blur-sm bg-white/10 p-10 mb-10 rounded-lg border border-gray-200 shadow-lg">
-              <h2 className="text-3xl font-bold text-[#B28D28] mb-10 text-center">Sign up</h2>
-              <div className="form-control w-full">
-                <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="input input-bordered border-[#B28D2866]/40 w-full pl-10 bg-white/20 text-white placeholder-gray-300"
-                  />
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                </div>
+            <div>
+              <label htmlFor="email" className="block text-gray-400 mb-1 text-lg font-medium">
+                Email Address
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="password" className="block text-gray-400 mb-1 text-lg font-medium">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Enter your password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  {showPassword ? <IoEyeOffOutline size={20} /> : <IoEyeOutline size={20} />}
+                </button>
               </div>
-
-              <div className="form-control w-full">
-                <div className="relative">
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    className="input input-bordered w-full pl-10 bg-white/20 border-[#B28D2866]/40  placeholder-gray-300 text-black"
-                  />
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                </div>
+            </div>
+            <div>
+              <label htmlFor="confirmPassword" className="block text-gray-400 mb-1 text-lg font-medium">
+                Confirm Password
+              </label>
+              <div className="relative">
+                <input
+                  id="confirmPassword"
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  placeholder="Confirm your password"
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={toggleConfirmPasswordVisibility}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  {showConfirmPassword ? <IoEyeOffOutline size={20} /> : <IoEyeOutline size={20} />}
+                </button>
               </div>
-
-              {/* Replaced "Re-Type your password" with phone number input */}
-              <div className="form-control w-full">
-                <div className="relative flex items-center">
-                  <div className="flex items-center bg-white/20 border-[#B28D2866]/40 border rounded-l-lg h-12 px-3">
-                    <span className="mr-1">
-                      {countryCodes.find((c) => c.code === countryCode)?.flag}
-                    </span>
-                    <select
-                      value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                      className="bg-transparent  focus:outline-none"
-                    >
-                      {countryCodes.map((country) => (
-                        <option key={country.code} value={country.code} className="text-black">
-                          {country.code}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <input
-                    type="tel"
-                    placeholder="Enter phone number"
-                    className="input input-bordered w-full h-12 bg-white/20 border-[#B28D2866]/40 text-black placeholder-gray-300 rounded-l-none border-l-0"
-                  />
-                </div>
-              </div>
-
-
-              <button className="btn bg-[#B28D28] text-white rounded-full w-full text-base">Next</button>
-
-              <p className="text-center text-gray-900">
-                Already have an account?
-                <Link to="/login" className="text-[#8F5E0A] font-semibold ml-1 hover:underline">Login</Link>
-              </p>
-            </form>
-          </div>
+            </div>
+           
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`w-full bg-[#2A5CE6] text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${
+                isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+              }`}
+            >
+              {isLoading ? 'Signing Up...' : 'Sign Up'}
+            </button>
+            <p className="text-base text-[#3E3E3E] text-center mt-4">
+              Already have an account?{' '}
+              <Link to="/signin" className="text-gray-400 underline hover:text-[#2A5CE6]">
+                Sign In
+              </Link>
+            </p>
+          </form>
         </div>
       </div>
     </div>

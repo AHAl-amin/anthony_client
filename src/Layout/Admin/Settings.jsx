@@ -1,15 +1,16 @@
-"use client"
+
 
 import { Pencil } from "lucide-react"
 import { useRef, useState } from "react"
+import { FaUserTie } from "react-icons/fa6"
 
 export default function Settings() {
   const fileInputRef = useRef(null)
-  const [profileImage, setProfileImage] = useState("/placeholder.svg?height=128&width=128")
+  const [profileImage, setProfileImage] = useState(null) // Start with null for no default image
 
   return (
-    <div className="min-h-screen ">
-      <div className=" mx-auto  max-w-7xl">
+    <div className="min-h-screen">
+      <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
@@ -18,13 +19,17 @@ export default function Settings() {
 
         {/* Profile Section */}
         <div className="flex flex-col items-center mb-10">
-          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200">
-            {/* Changed from Next.js Image to standard <img> tag */}
-            <img
-              src={profileImage || "/placeholder.svg"}
-              alt="Admin Profile Pic"
-              className="w-full h-full object-cover" // Tailwind classes for layout and objectFit
-            />
+          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 flex items-center justify-center bg-gray-100">
+            {profileImage ? (
+              <img
+                src={profileImage}
+                alt="Admin Profile Pic"
+                className="w-full h-full object-cover"
+                onError={() => setProfileImage(null)} // Fallback to icon if image fails to load
+              />
+            ) : (
+              <FaUserTie className="w-16 h-16 text-gray-900" /> // Adjusted size for better fit
+            )}
           </div>
           <input
             type="file"
@@ -53,6 +58,7 @@ export default function Settings() {
           </div>
         </div>
 
+        
         {/* Account Settings */}
         <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Account Settings</h3>

@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts';
+import { Link } from 'react-router-dom';
 
 // Card component
 const Card = ({ children, className, title }) => {
@@ -335,7 +336,7 @@ const AdminOverview = () => {
             ))}
           </div>
           <div className="mt-4 text-right">
-            <button className="text-blue-600 text-sm font-medium hover:underline">View all</button>
+            <Link to="/admin_dashboard/user_activity" className="text-blue-600 text-sm font-medium hover:underline">View all</Link>
           </div>
         </Card>
         <Card title="Weekly Usage Summary">
