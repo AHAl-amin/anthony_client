@@ -32,12 +32,12 @@ const Login = () => {
     setError('');
     setIsLoading(true);
 
-    // Basic form validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword || !formData.role) {
-      setError('All fields are required');
-      setIsLoading(false);
-      return;
-    }
+    // // Basic form validation
+    // if (!formData.name || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword || !formData.role) {
+    //   setError('All fields are required');
+    //   setIsLoading(false);
+    //   return;
+    // }
 
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
@@ -85,7 +85,7 @@ const Login = () => {
               Sign in to your account
 
             </p>
-            <p className='text-center text-gray-400'>Don’t have an account? <Link to="/login" className='text-blue-500'>Sign up</Link></p>
+            <p className='text-center text-gray-400'>Don’t have an account? <Link to="/sign_up" className='text-blue-500'>Sign up</Link></p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
@@ -140,7 +140,7 @@ const Login = () => {
 
 
               <div className="flex justify-center mt-4 ">
-                <Link className='text-blue-500 '>
+                <Link to="/verify" className='text-blue-500 '>
                   Forgot password?
                 </Link>
               </div>

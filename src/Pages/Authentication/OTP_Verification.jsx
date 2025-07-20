@@ -1,72 +1,128 @@
-import React from 'react';
+import { useState } from 'react';
 import { Mail, Lock, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Lottie from 'lottie-react';
-import otpLottie from '../../assets/otpverify.json'
+import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
+import { FcGoogle } from 'react-icons/fc';
+import { FaApple } from 'react-icons/fa6';
 
 const OTP_Verification = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmPassword: '',
+    role: ''
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setIsLoading(true);
+
+    // Basic form validation
+    // if (!formData.name || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword || !formData.role) {
+    //   setError('All fields are required');
+    //   setIsLoading(false);
+    //   return;
+    // }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      setIsLoading(false);
+      return;
+    }
+
+    // Add your API call here
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Handle successful registration
+    } catch (err) {
+      setError('Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
- 
-      <div className="w-full bg-gray-900 md:w-1/2 h-[30vh] md:h-screen relative">
-      <Lottie
-            animationData={otpLottie} 
-            loop={false} 
-            className="absolute inset-0 w-3/4 h-full mx-auto object-cover"></Lottie>
-     
+    <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
+      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB] relative">
+        <div className='flex justify-center h-full items-center'>
+          <img
+            src="/image/auth/authLogo.png"
+            alt="Logo"
+            className="max-w-[200px] md:max-w-[300px]"
+          />
+        </div>
       </div>
 
+      <div className="w-full md:w-[60%] bg-gradient-to-b from-[#4d60df70] via-[#e7e9ec85] to-[#c4c7ca27] flex items-center justify-center p-4 md:p-8">
+        <div className="w-full max-w-lg">
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
+              {error}
+            </div>
+          )}
 
-      <div className="w-full md:w-1/2 min-h-[100vh] md:h-screen relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage: "url('https://i.ibb.co.com/cctYrsKY/Group-1686551056.png')",
-          }}
-        >
-        </div>
-        
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] md:h-screen p-8">
-          <div className="w-full max-w-xl space-y-8">
-            <div className="text-center">
-              <img 
-                src="https://i.ibb.co.com/sp5JLnkF/Whats-App-Image-2025-02-22-at-9-25-22-AM-3.png" 
-                alt="Logo" 
-                className="mx-auto mb-16 w-3/4" 
+          <div className="text-4xl md:text-5xl text-gray-400 font-bold flex justify-center mb-6">
+            <img src="../../../public/image/auth/auth2.png" alt="" />
+          </div>
+           <p className="text-gray-800 text-center  font-bold text-2xl mb-4">
+             Verify your OTP
+
+            </p>
+
+          <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
+
+            <div>
+             
+              <input
+                id="email"
+                type="email"
+                placeholder="Enter your otp"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
             </div>
 
-            <form className="backdrop-blur-sm bg-white/10 p-10 mb-10 rounded-lg border border-gray-200 shadow-lg">
-              <h2 className="text-3xl font-bold text-[#B28D28] mb-10 text-center">Verify your OTP</h2>
-              <div className="form-control w-full mb-6">
-                <div className="relative">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your OTP" 
-                    className="input input-bordered border-[#B28D2866]/40 w-full pl-10 bg-white/20  text-black placeholder-gray-300" 
-                  />
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                </div>
-              </div>
+
+            <div>
+
+             <Link to="/">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`w-full bg-[#2A5CE6] text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+                  }`}
+              >
+                {isLoading ? 'Sending...' : 'Send'}
+              </button>
+             </Link>
 
 
-<div className='pb-2'>
-    
-<Link to="/reset_password">
-<button className="btn bg-[#B28D28] text-white rounded-full w-full text-base ">Next</button>
-</Link>
-<div className='flex mx-auto justify-center'>
-<Link to="/login" className='font-semibold mt-4 text-sm  text-[#B28D28]  hover:underline'>Resend Code</Link>
-</div>
-</div>
 
-            
-            </form>
-          </div>
+             
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default OTP_Verification;

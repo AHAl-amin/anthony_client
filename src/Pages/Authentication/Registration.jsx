@@ -33,11 +33,11 @@ const Registration = () => {
     setIsLoading(true);
 
     // Basic form validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword || !formData.role) {
-      setError('All fields are required');
-      setIsLoading(false);
-      return;
-    }
+    // if (!formData.name || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword || !formData.role) {
+    //   setError('All fields are required');
+    //   setIsLoading(false);
+    //   return;
+    // }
 
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
@@ -85,7 +85,7 @@ const Registration = () => {
               Create an account
 
             </p>
-            <p className='text-center text-gray-400'>Have an account? <Link to="/login" className='text-blue-500'>Sign in</Link></p>
+            <p className='text-center text-gray-400'>Have an account? <Link to="/signin" className='text-blue-500'>Sign in</Link></p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
@@ -159,7 +159,9 @@ const Registration = () => {
                   {showConfirmPassword ? <IoEyeOffOutline size={20} /> : <IoEyeOutline size={20} />}
                 </button>
               </div>
-              <button
+            <Link to="/otp_verify">
+            
+                      <button
                 type="submit"
                 disabled={isLoading}
                 className={`w-full bg-[#2A5CE6] text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
@@ -167,7 +169,9 @@ const Registration = () => {
               >
                 {isLoading ? 'Signing Up...' : 'Sign Up'}
               </button>
+            </Link>
 
+             
 
               <div className="flex items-center mt-4 ">
                 <input
