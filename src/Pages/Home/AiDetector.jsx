@@ -2,14 +2,17 @@
 
 
 import React, { useState } from 'react';
+import aiOne from '../../../public/image/home/ai1.png'
+import aiTwo from '../../../public/image/home/ai2.png'
+import aiThree from '../../../public/image/home/ai3.png'
 
 function AiDetector() {
     const [selectedCard, setSelectedCard] = useState(null);
 
-    const cards = [
+     const cards = [
         {
             title: 'SEO Agencies',
-            image: '../../../public/image/home/ai2.png',
+            image: aiTwo,
             description: 'Protect your SEO strategies with our AI Checker to ensure high-quality, original content.',
             features: [
                 'Ensure content is indexed properly.',
@@ -20,7 +23,7 @@ function AiDetector() {
         },
         {
             title: 'Marketers',
-            image: '../../../public/image/home/ai3.png',
+            image: aiThree,
             description: 'Enhance your marketing campaigns by ensuring original and engaging content.',
             features: [
                 'Validate marketing materials for originality.',
@@ -31,7 +34,7 @@ function AiDetector() {
         },
         {
             title: 'Content Creators',
-            image: '../../../public/image/home/ai1.png',
+            image: aiOne,
             description: 'Protect your content from copy penalties and keep your rankings safe.',
             features: [
                 'Ensure your content gets indexed by using our AI Checker.',

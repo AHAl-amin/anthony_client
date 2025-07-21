@@ -9,6 +9,7 @@ import { BadgePercent, Bell, CalendarDays, ChevronDown, ChevronsLeft, ChevronsRi
 import { RiUserSettingsLine } from "react-icons/ri";
 import { BsFillBarChartFill } from "react-icons/bs";
 import { PiShoppingBagOpenThin } from "react-icons/pi";
+import homeLogo from '../../../public/image/home/logo.png'
 
 export default function DashboardLayout() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -58,7 +59,7 @@ export default function DashboardLayout() {
               className={`transform transition-all duration-500 ${isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
                 }`}
             >
-              <img src="../../../public/image/home/logo.png" alt="Logo" />
+              <img src={homeLogo} alt="Logo" />
             </div>
           </div>
         </div>

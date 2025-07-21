@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { FcGoogle } from 'react-icons/fc';
 import { FaApple } from 'react-icons/fa6';
+import authTwo from '../../../public/image/auth/auth2.png'
+import authLogo from '../../../public/image/auth/authLogo.png'
+
 
 const EmailVerification = () => {
   const [formData, setFormData] = useState({
@@ -62,7 +65,7 @@ const EmailVerification = () => {
       <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB] relative">
         <div className='flex justify-center h-full items-center'>
           <img
-            src="/image/auth/authLogo.png"
+            src={authLogo}
             alt="Logo"
             className="max-w-[200px] md:max-w-[300px]"
           />
@@ -78,7 +81,7 @@ const EmailVerification = () => {
           )}
 
           <div className="text-4xl md:text-5xl text-gray-400 font-bold flex justify-center mb-6">
-            <img src="../../../public/image/auth/auth2.png" alt="" />
+            <img src={authTwo} alt="" />
           </div>
            <p className="text-gray-800 text-center  font-bold text-2xl mb-4">
               Password Reset
