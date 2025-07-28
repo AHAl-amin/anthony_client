@@ -38,7 +38,7 @@ const TextInput = ({
         {value && (
           <button
             onClick={() => onChange('')}
-            className="text-blue-600 hover:text-blue-800"
+            className="text hover:text-blue-800"
           >
             Clear
           </button>

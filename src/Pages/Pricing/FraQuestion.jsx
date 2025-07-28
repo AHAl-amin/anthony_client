@@ -2,7 +2,7 @@ import React from 'react'
 
 function FraQuestion() {
     return (
-        <div className='md:max-w-6xl gap-6 my-20  w-full mx-auto'>
+        <div className='md:max-w-6xl gap-6 my-20  w-full mx-auto inter'>
             <h2 className='text-center mb-8 md:text-4xl text-3xl font-bold text-gray-900 '>Frequently Asked Questions</h2>
            <div className='space-y-10'>
              <div className="collapse collapse-arrow shadow border border-base-300">

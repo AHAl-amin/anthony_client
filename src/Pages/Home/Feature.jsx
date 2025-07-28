@@ -3,7 +3,7 @@ function Feature() {
     <div className="py-16 px-4 md:max-w-6xl w-full mx-auto">
       {/* Header Section */}
       <div className="text-center mb-12">
-        <p className="text-xl font-semibold mb-4" style={{ color: "#2A5CE6" }}>
+        <p className="text-xl font-semibold mb-4" style={{ color: "#30B2A8" }}>
           Features
         </p>
         <h2 className="text-4xl font-bold mb-4" style={{ color: "#111827" }}>
@@ -18,14 +18,14 @@ function Feature() {
       {/* Features Grid */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* AI Detection Engine */}
-        <div className="bg-white p-8 rounded-xl border border-gray-100 shadow hover:shadow-lg shadow transition-shadow">
+        <div className="bg-white p-8 rounded-xl border border-gray-100  hover:shadow-lg shadow transition-shadow">
           <div className="flex items-start space-x-4">
             <div className="flex-shrink-0">
               <div
                 className="w-12 h-12 rounded-lg flex items-center justify-center"
                
               >
-                <svg className="w-8 h-8 text-[#2A5CE6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-[#30B2A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -55,7 +55,7 @@ function Feature() {
                 className="w-12 h-12 rounded-lg flex items-center justify-center"
                
               >
-                <svg className="w-8 h-8 text-[#2A5CE6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-[#30B2A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -79,7 +79,7 @@ function Feature() {
                 className="w-12 h-12 rounded-lg flex items-center justify-center"
                 
               >
-                <svg className="w-8 h-8 text-[#2A5CE6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-[#30B2A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -109,7 +109,7 @@ function Feature() {
                 className="w-12 h-12 rounded-lg flex items-center justify-center"
                
               >
-                <svg className="w-8 h-8 text-[#2A5CE6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-[#30B2A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

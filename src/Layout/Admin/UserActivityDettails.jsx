@@ -100,7 +100,7 @@ export default function UserActivityDetails() {
     return (
         <div className="w-full mx-auto bg-gray-100  rounded-lg">
             <div className="mb-6">
-                <Link to="/admin_dashboard/user_activity" className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium">
+                <Link to="/admin_dashboard/user_activity" className="inline-flex items-center text hover:text-blue-800 text-sm font-medium">
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Back to Activity Log
                 </Link>

@@ -4,10 +4,9 @@
 import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { FaUserGroup } from "react-icons/fa6";
+
 import { BadgePercent, Bell, CalendarDays, ChevronDown, ChevronsLeft, ChevronsRight, LineChartIcon, MessagesSquare, RefreshCwIcon, SearchCheckIcon, SettingsIcon, UsersIcon } from "lucide-react";
-import { RiUserSettingsLine } from "react-icons/ri";
-import { BsFillBarChartFill } from "react-icons/bs";
+
 import { PiShoppingBagOpenThin } from "react-icons/pi";
 import homeLogo from '../../../public/image/home/logo.png'
 
@@ -46,7 +45,7 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="flex h-screen  bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB]">
+    <div className="flex h-screen  bg-[#011F38]">
       {/* Sidebar */}
       <aside
         className={` ${isCollapsed ? "w-20" : "w-60"
@@ -54,9 +53,9 @@ export default function DashboardLayout() {
       >
         {/* Logo */}
         <div className="h-16 flex items-center px-4">
-          <div className="flex items-center ms-1 gap-2 mt-8">
+          <div className="flex items-center ms-1 gap-2 mt-12">
             <div
-              className={`transform transition-all duration-500 ${isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
+              className={`transform transition-all duration-500 p-6 ${isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
                 }`}
             >
               <img src={homeLogo} alt="Logo" />
@@ -65,7 +64,7 @@ export default function DashboardLayout() {
         </div>
 
         {/* Navigation */}
-        <nav className=" mt-6 ">
+        <nav className=" mt-14 ">
           {menuItems.map((section, idx) => (
             <div key={idx} className="mb-8">
               <ul className="space-y-2">
@@ -78,12 +77,12 @@ export default function DashboardLayout() {
                       onClick={() => handleItemClick(item.name, item.path)}
                       className={`flex items-center gap-3 px-6 py-2  group relative
     ${selectedItem === item.name
-                          ? "text-[#FFFFFF] border-r-4 border-[#FFFFFF] bg-[#FFFFFF1F]"
+                          ? "text-gray-800 border-r-4 border-[#30B2A8] bg-[#B3E4DF]"
                           : "text-[#FFFFFF] hover:bg-[#FFFFFF1F]"
                         }`}
                     >
                       <span
-                        className={`transition-colors duration-300 ${selectedItem === item.name ? "text-[#FFFFFF]" : "text-[#FFFFFF]"
+                        className={`transition-colors duration-300 ${selectedItem === item.name ? "text-gray-800" : "text-[#FFFFFF]"
                           }`}
                       >
                         {item.icon}

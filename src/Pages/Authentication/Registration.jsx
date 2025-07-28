@@ -61,7 +61,7 @@ const Registration = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
-      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#A1ADFC] via-[#2563EB] to-[#2563EB] relative">
+      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#0A192F]  to-[#90E0D8] relative">
         <div className='flex justify-center h-full items-center'>
           <img
             src={authLogo}
@@ -71,7 +71,7 @@ const Registration = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-[60%] bg-gradient-to-b from-[#4d60df70] via-[#e7e9ec85] to-[#c4c7ca27] flex items-center justify-center p-4 md:p-8">
+      <div className="w-full md:w-[60%] bg-[#011E39] flex items-center justify-center p-4 md:p-8">
         <div className="w-full max-w-lg">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
@@ -79,15 +79,15 @@ const Registration = () => {
             </div>
           )}
 
-          <div className="text-4xl md:text-5xl text-gray-400 font-bold text-center mb-10">
+          <div className="text-4xl md:text-5xl flex justify-center items-center text-gray-400 font-bold text-center mb-6">
             <img src={authTwo} alt="" />
           </div>
-          <div className='mb-4'>
-            <p className="text-gray-800 text-center  font-bold text-2xl mb-1">
+          <div className='mb-2'>
+            <p className="text-gray-300 text-center  font-bold text-2xl mb-1">
               Create an account
 
             </p>
-            <p className='text-center text-gray-400'>Have an account? <Link to="/signin" className='text-blue-500'>Sign in</Link></p>
+            <p className='text-center text-gray-300'>Have an account? <Link to="/signin" className='text'>Sign in</Link></p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
@@ -166,7 +166,7 @@ const Registration = () => {
                       <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full bg-[#2A5CE6] text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+                className={`w-full bg text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                   }`}
               >
                 {isLoading ? 'Signing Up...' : 'Sign Up'}
@@ -181,15 +181,15 @@ const Registration = () => {
                   id="agreeTerms"
 
 
-                  className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="h-4 w-4 text border-gray-300 rounded focus:ring-blue-500"
                 />
                 <label htmlFor="agreeTerms" className="ml-2 block text-sm text-gray-700">
                   I agree to the{" "}
-                  <Link href="/terms" className="text-blue-600 hover:underline">
+                  <Link href="/terms" className="text hover:underline">
                     Terms of Use
                   </Link>{" "}
                   and{" "}
-                  <Link href="/privacy" className="text-blue-600 hover:underline">
+                  <Link href="/privacy" className="text hover:underline">
                     Privacy Policy
                   </Link>
                 </label>

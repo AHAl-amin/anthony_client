@@ -104,7 +104,7 @@ export default function PaymentHistory() {
       case "Refund":
         return "text-red-500 border border-red-200 hover:bg-red-50 hover:text-red-600"
       case "Details":
-        return "text-blue-500 border border-blue-200 hover:bg-blue-50 hover:text-blue-600"
+        return "text-blue-500 border border-blue-200 hover:bg-blue-50 hover:text"
       default:
         return ""
     }

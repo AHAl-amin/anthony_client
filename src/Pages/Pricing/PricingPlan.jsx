@@ -68,7 +68,7 @@ function PricingPlan() {
     };
 
     return (
-        <section className="relative md:max-w-6xl md:w-[60%] mx-auto py-16 ">
+        <section className="relative md:max-w-6xl md:w-[60%] mx-auto py-16 inter">
             <div className="relative py-20">
                 <div className="flex flex-col items-center justify-center">
                     <h1 className="md:text-4xl text-2xl mb-2 md:font-bold text-[#111827]">Choose the plan that fits your writing needs</h1>
@@ -87,7 +87,7 @@ function PricingPlan() {
                                 key={plan.id}
                                 className={`
                   relative bg-white/90 backdrop-blur-sm rounded-3xl border-2 border-transparent shadow 
-                 transition-all duration-300 hover:-translate-y-2 hover:border-[#1e4db2] 
+                 transition-all duration-300 hover:-translate-y-2 
                   ${selectedPlan === plan.id ? "ring-2 ring-amber-500" : ""}
                   flex flex-col
                   
@@ -97,7 +97,7 @@ function PricingPlan() {
                             >
                                 <div className="p-6">
                                     <h3 className="text-xl md:text-3xl font-bold text-[#111827] mb-2 ">{plan.name}</h3>
-                                    <p className="text-[#1e4db2]  text-sm sm:text-base mb-6">{plan.subtitle}</p>
+                                    <p className="text text-sm sm:text-base mb-6">{plan.subtitle}</p>
                                     <div className="text-3xl font-bold text-[#111827]  ">{plan.price}</div>
                                 </div>
 
@@ -117,7 +117,7 @@ function PricingPlan() {
                                     </ul>
                                     <button
                                         onClick={() => handleGetStarted(plan)}
-                                        className=" text-black border border-[#1e4db2] cursor-pointer  py-2 px-4 rounded-lg flex gap-2 items-center justify-center mt-auto hover:bg-[#1e4db2] hover:text-gray-200 transition-colors"
+                                        className=" text-black  bg cursor-pointer  py-2 px-4 rounded-lg flex gap-2 items-center justify-center mt-auto  hover:text-gray-200 transition-colors"
                                     >
                                         <span>{plan.buttonText}</span>
 

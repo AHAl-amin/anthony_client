@@ -46,7 +46,7 @@ function AiDetector() {
     ];
 
     return (
-        <div className="py-16 px-4" style={{ backgroundColor: '#6586AC' }}>
+        <div className="py-16 px-4" style={{ backgroundColor: '#011E39' }}>
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
@@ -59,7 +59,7 @@ function AiDetector() {
                         <div
                             key={index}
                             //   className="bg-white rounded-2xl p-6 text-center shadow-lg cursor-pointer"
-                            className={`bg-white rounded-2xl p-6 text-center shadow-lg cursor-pointer ${selectedCard?.title === card.title ? 'border-b-4 border-[#2563EB]' : 'border-transparent'
+                            className={`bg-[#90E0D8] rounded-2xl p-6 text-center shadow-lg cursor-pointer ${selectedCard?.title === card.title ? 'border-b-4 border-[#90E0D8]' : 'border-transparent'
                                 }`}
                             onClick={() => setSelectedCard(card)}
                         >
@@ -79,7 +79,7 @@ function AiDetector() {
 
                 {/* Detailed Section */}
                 {selectedCard && (
-                    <div className="bg-white rounded-2xl p-8 shadow-lg">
+                    <div className="bg-[#90E0D8] rounded-2xl p-8 shadow-lg">
                         <div className="grid md:grid-cols-2 gap-8">
                             {/* Left side - Image */}
                             <div className="order-2 md:order-1">

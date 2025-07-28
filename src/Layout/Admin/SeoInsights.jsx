@@ -89,7 +89,7 @@ const SeoInsights = () => {
               </p>
             </div>
             <div className="p-2 bg-blue-100 rounded-lg">
-              <CheckCircleIcon size={20} className="text-blue-600" />
+              <CheckCircleIcon size={20} className="text" />
             </div>
           </div>
         </Card>

@@ -3,10 +3,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { CiSettings } from 'react-icons/ci';
+import logo from '../../../public/image/home/logo.png'; // Adjust the path as necessary
 
 const Navbar = () => {
   const location = useLocation();
-  const activeClass = 'text-gray-600 border-b-2 border-[#2045AD]';
+  const activeClass = 'text-[#90E0D8] border-b-2 border-[#90E0D8] pb-2';
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -14,10 +15,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF] py-3 px-6 shadow-md sticky top-0 z-50 shadow-black/20">
+    <nav className="bg-[#011F39] py-3 px-6 shadow-md sticky top-0 z-50 shadow-black/20">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <h1 className='text-[#2A5CE6] font-bold text-3xl'>Text Humanizer Pro</h1>
+          <img src={logo} alt="" />
         </div>
 
         <div className="hidden md:flex space-x-8">
@@ -60,7 +61,7 @@ const Navbar = () => {
         <div className="md:flex items-center space-x-4">
           <Link
             to="/signin"
-            className="text-lg bg-[#2A5CE6] text-white py-2 px-4 rounded-md"
+            className="text-lg bg-[#30B2A8] text-white py-2 px-4 rounded-md"
           >
             sign in
           </Link>

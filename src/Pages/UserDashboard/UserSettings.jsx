@@ -30,7 +30,7 @@ export default function UserSettings() {
               />
               <div className="flex flex-col items-center sm:items-start gap-2">
                 <button
-                  className="flex items-center px-3 py-1.5 bg-[#2563EB] text-white rounded-md transition"
+                  className="flex items-center px-3 py-1.5 bg text-white rounded-md transition"
                   onClick={() => fileInputRef.current.click()}
                 >
                   <Upload className="h-4 w-4 mr-1" />
@@ -68,7 +68,7 @@ export default function UserSettings() {
                   type="text"
                   id="first-name"
                   placeholder="Fisrt name"
-                  className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+                  className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-bg focus:border-bg"
                 />
               </div>
               <div>
@@ -79,11 +79,11 @@ export default function UserSettings() {
                   type="text"
                   id="last-name"
                  placeholder="Last name"
-                  className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+                  className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-bg focus:border-bg"
                 />
               </div>
             </div>
-            <button className="flex items-center px-3 py-1.5 bg-[#2563EB] text-white rounded-md hover:bg-[#2563EB] transition">
+            <button className="flex items-center px-3 py-1.5 bg text-white rounded-md hover:bg transition">
               <Save className="h-4 w-4 mr-1" />
               Save Name
             </button>
@@ -100,10 +100,10 @@ export default function UserSettings() {
                 type="email"
                 id="email-address"
                 placeholder="Email"
-                className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+                className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-bg focus:border-bg"
               />
             </div>
-            <button className="flex items-center px-3 py-1.5 bg-[#2563EB] text-white rounded-md hover:bg-[#2563EB] transition">
+            <button className="flex items-center px-3 py-1.5 bg text-white rounded-md hover:bg transition">
               <Save className="h-4 w-4 mr-1" />
               Save Email
             </button>
@@ -120,7 +120,7 @@ export default function UserSettings() {
                 <input
                   type={showCurrentPassword ? "text" : "password"}
                   id="current-password"
-                  className="mt-1 w-full p-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+                  className="mt-1 w-full p-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-bg focus:border-bg"
                 />
                 <button
                   type="button"
@@ -137,7 +137,7 @@ export default function UserSettings() {
                 <input
                   type={showNewPassword ? "text" : "password"}
                   id="new-password"
-                  className="mt-1 w-full p-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+                  className="mt-1 w-full p-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-bg focus:border-bg"
                 />
                 <button
                   type="button"
@@ -154,7 +154,7 @@ export default function UserSettings() {
                 <input
                   type={showConfirmPassword ? "text" : "password"}
                   id="confirm-password"
-                  className="mt-1 w-full p-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+                  className="mt-1 w-full p-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-bg focus:border-bg"
                 />
                 <button
                   type="button"
@@ -166,11 +166,11 @@ export default function UserSettings() {
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <button className="flex items-center px-3 py-1.5 bg-[#2563EB] text-white rounded-md hover:bg-[#2563EB] transition">
+              <button className="flex items-center px-3 py-1.5 bg text-white rounded-md hover:bg transition">
                 <Save className="h-4 w-4 mr-1" />
                 Update Password
               </button>
-              <a href="#" className="text-sm text-[#2563EB] hover:underline">
+              <a href="#" className="text-sm text text-bg hover:underline">
                 Forgot Password?
               </a>
             </div>
@@ -191,7 +191,7 @@ export default function UserSettings() {
                 <p className="text-sm font-medium text-gray-700">Words Used</p>
                 <div className="flex items-center gap-2">
                   <div className="w-full bg-gray-200 rounded-full mr-4 h-2">
-                    <div className="bg-[#2563EB] h-2 rounded-full" style={{ width: "22%" }}></div>
+                    <div className="bg h-2 rounded-full" style={{ width: "22%" }}></div>
                   </div>
                   <span className="text-xs text-gray-700">500/2,000</span>
                 </div>
@@ -206,7 +206,7 @@ export default function UserSettings() {
                   <p>Monthly</p>
                 </div>
               </div>
-              <button className="w-full flex items-center justify-center px-3 py-1.5 bg-[#2563EB] text-white rounded-md hover:bg-[#2563EB] transition">
+              <button className="w-full flex items-center justify-center px-3 py-1.5 bg text-white rounded-md hover:bg transition">
                 Upgrade Plan
               </button>
             </div>

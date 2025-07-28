@@ -89,7 +89,7 @@ function Billing() {
       <div className="relative py-10">
         <div className="flex items-center justify-between">
           <h1 className="md:text-4xl text-2xl mb-2 md:font-bold text-[#111827]">Subscription Plans</h1>
-          <Link to="/admin_dashboard/add_plan" className="text-lg text-gray-200 max-w-2xl text-center font-sans flex gap-2 items-center bg-[#2563EB] px-4 py-2 rounded-full cursor-pointer">
+          <Link to="/admin_dashboard/add_plan" className="text-lg text-gray-200 max-w-2xl text-center font-sans flex gap-2 items-center bg px-4 py-2 rounded-full cursor-pointer">
             <IoIosAdd className="size-8" />Add Plan
           </Link>
         </div>
@@ -114,7 +114,7 @@ function Billing() {
                 <div className="p-6 flex justify-between">
                   <div>
                     <h3 className="text-xl md:text-3xl font-bold text-[#111827] mb-2">{plan.name}</h3>
-                    <p className="text-[#1e4db2] text-sm sm:text-base mb-6">{plan.subtitle}</p>
+                    <p className="text text-sm sm:text-base mb-6">{plan.subtitle}</p>
                     <div className="text-3xl font-bold text-[#111827]">{plan.price}</div>
                   </div>
                   <div>

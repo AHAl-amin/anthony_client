@@ -118,11 +118,11 @@ function UserDashboardHome() {
           <span className="text-sm text-gray-600">
             Free Plan: {MAX_WORDS - wordsRemaining} / {MAX_WORDS} words used
           </span>
-          <span className="text-sm font-medium bg-[#60AAFF] text-gray-200 p-3 rounded-xl">{wordsRemaining} words remaining</span>
+          <span className="text-sm font-medium bg text-gray-200 p-3 rounded-xl">{wordsRemaining} words remaining</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div
-            className="bg-[#22C55E] h-2.5 rounded-full"
+            className="bg h-2.5 rounded-full"
             style={{ width: `${((MAX_WORDS - wordsRemaining) / MAX_WORDS) * 100}%` }}
           ></div>
         </div>
@@ -136,7 +136,7 @@ function UserDashboardHome() {
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Input Text</h2>
             <textarea
-              className="w-full p-3 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-y min-h-[150px]"
+              className="w-full p-3 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-[#22C55E] focus:border-transparent resize-y min-h-[150px]"
               rows={8}
               placeholder="Paste your AI-generated text here to humanize it..."
               value={inputText}
@@ -150,7 +150,7 @@ function UserDashboardHome() {
               </span>
               <button
                 onClick={() => setInputText("")}
-                className="text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="text hover:text-[#22C55E]/50 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={inputText.length === 0}
               >
                 Clear
@@ -161,17 +161,17 @@ function UserDashboardHome() {
               <input
                 type="checkbox"
                 id="terms"
-                className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
+                className="h-4 w-4 text border-gray-300 rounded focus:ring-[bg-[#22C55E]"
                 checked={agreedToTerms}
                 onChange={(e) => setAgreedToTerms(e.target.checked)}
               />
               <label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer">
                 I consent to the temporary processing of my input in accordance with the{" "}
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text hover:underline">
                   Privacy Policy
                 </a>{" "}
                 and{" "}
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text hover:underline">
                   Terms of Use
                 </a>
                 .
@@ -185,7 +185,7 @@ function UserDashboardHome() {
             <p className="text-center space-">
               Your text is temporarily processed for transformation purposes. We do not store or re-use your content. <br /><br />
               Your data stays private. Read our{" "}
-              <a href="#" className="text-blue-600 hover:underline">
+              <a href="#" className="text hover:underline">
                 data policy
               </a>
             </p>
@@ -201,21 +201,21 @@ function UserDashboardHome() {
             <label className=" text-gray-700 font-medium  flex gap-4 items-center mb-6"> <RxActivityLog className="rotate-90" />Humanization Level</label>
             <div className="flex space-x-2 bg-gray-100 p-1 rounded-md">
               <button
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "low" ? "bg-[#DBEAFE] text-[#1D4ED8]" : "text-gray-700 hover:bg-gray-200"
+                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "low" ? "bg-[#A9F0E9] text" : "text-gray-700 hover:bg-gray-200"
                   }`}
                 onClick={() => setHumanizationLevel("low")}
               >
                 Low (~60%)
               </button>
               <button
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "medium" ? "bg-[#DBEAFE] text-[#1D4ED8]" : "text-gray-700 hover:bg-gray-200"
+                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "medium" ? "bg-[#A9F0E9] text" : "text-gray-700 hover:bg-gray-200"
                   }`}
                 onClick={() => setHumanizationLevel("medium")}
               >
                 Medium (~40%)
               </button>
               <button
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "high" ? "bg-[#DBEAFE] text-[#1D4ED8]" : "text-gray-700 hover:bg-gray-200"
+                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "high" ? "bg-[#A9F0E9] text" : "text-gray-700 hover:bg-gray-200"
                   }`}
                 onClick={() => setHumanizationLevel("high")}
               >
@@ -224,7 +224,7 @@ function UserDashboardHome() {
             </div>
             <p className="text-xs text-gray-500 mt-2">Balanced humanization - Good for most content needs</p>
             <button
-              className="w-full bg-blue-600 text-white px-4 py-3 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="w-full bg text-white px-4 py-3 rounded-md hover:bg-[#30B2A8]/80 cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
               onClick={handleHumanize}
               disabled={inputText.length === 0 || isProcessing || !agreedToTerms}
             >

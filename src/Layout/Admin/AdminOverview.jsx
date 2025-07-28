@@ -81,7 +81,7 @@ const AdminOverview = () => {
               </p>
             </div>
             <div className="p-2 bg-blue-100 rounded-lg">
-              <CheckCircleIcon size={20} className="text-blue-600" />
+              <CheckCircleIcon size={20} className="text" />
             </div>
           </div>
           <div className="mt-4 h-[150px]">
@@ -106,7 +106,7 @@ const AdminOverview = () => {
                   content={({ active, payload }) => {
                     if (active && payload && payload.length) {
                       return (
-                        <div className="bg-[#3b82f6] text-white px-2 py-1 rounded shadow-md">
+                        <div className="bg text-white px-2 py-1 rounded shadow-md">
                           <p className="text-sm">{payload[0].value} checked</p>
                         </div>
                       );
@@ -325,7 +325,7 @@ const AdminOverview = () => {
                 className="flex items-center pb-4 border-b border-gray-100 last:border-0 last:pb-0"
               >
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                  <UsersIcon size={18} className="text-blue-600" />
+                  <UsersIcon size={18} className="text" />
                 </div>
                 <div className="flex-1">
                   <p className="font-medium text-gray-800">User activity {item}</p>
@@ -336,7 +336,7 @@ const AdminOverview = () => {
             ))}
           </div>
           <div className="mt-4 text-right">
-            <Link to="/admin_dashboard/user_activity" className="text-blue-600 text-sm font-medium hover:underline">View all</Link>
+            <Link to="/admin_dashboard/user_activity" className="text text-sm font-medium hover:underline">View all</Link>
           </div>
         </Card>
         <Card title="Weekly Usage Summary">
