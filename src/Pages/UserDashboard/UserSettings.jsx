@@ -1,6 +1,7 @@
 // src/Pages/UserDashboard/UserSettings.jsx
 import { useState, useRef } from "react";
 import { ArrowLeft, Upload, Save, CreditCard, Eye, EyeOff } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function UserSettings() {
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
@@ -14,8 +15,8 @@ export default function UserSettings() {
       <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-md p-8">
         {/* Header */}
         <div className="flex items-center border-b border-gray-200 pb-3 mb-6">
-          <ArrowLeft className="h-5 w-5 text-gray-800 mr-3 cursor-pointer" />
-          <h1 className="text-2xl font-bold text-gray-900">Account Settings</h1>
+          
+          <h1 className="text-3xl font-bold text-gray-900">Account Settings</h1>
         </div>
 
         <div className="space-y-6">
@@ -170,9 +171,9 @@ export default function UserSettings() {
                 <Save className="h-4 w-4 mr-1" />
                 Update Password
               </button>
-              <a href="#" className="text-sm text text-bg hover:underline">
+              <Link to='/verify' href="" className="text-sm text-[#E15111] text-bg hover:underline">
                 Forgot Password?
-              </a>
+              </Link>
             </div>
           </div>
 

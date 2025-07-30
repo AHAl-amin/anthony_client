@@ -8,7 +8,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { BadgePercent, Bell, CalendarDays, ChevronDown, ChevronsLeft, ChevronsRight, LineChartIcon, MessagesSquare, RefreshCwIcon, SearchCheckIcon, SettingsIcon, UsersIcon } from "lucide-react";
 
 import { PiShoppingBagOpenThin } from "react-icons/pi";
-import homeLogo from '../../../public/image/home/logo.png'
+import homeLogo from '../../../public/image/home/logo2.png'
 
 export default function DashboardLayout() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -53,14 +53,14 @@ export default function DashboardLayout() {
       >
         {/* Logo */}
         <div className="h-16 flex items-center px-4">
-          <div className="flex items-center ms-1 gap-2 mt-12">
+          <Link to='/' className="flex items-center ms-1 gap-2 mt-12">
             <div
               className={`transform transition-all duration-500 p-6 ${isCollapsed ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
                 }`}
             >
-              <img src={homeLogo} alt="Logo" />
+              <img src={homeLogo} alt="Logo" className="" />
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Navigation */}
@@ -153,7 +153,7 @@ export default function DashboardLayout() {
                     className="dropdown-content mt-4 menu bg-base-200 rounded-box z-50 w-32 p-2 shadow-md border border-gray-400"
                   >
                     <li>
-                      <Link to="/profile" className="text-gray-700 hover:text-gray-900">
+                      <Link to="/admin_dashboard/settings" className="text-gray-700 hover:text-gray-900">
                         Profile
                       </Link>
                     </li>

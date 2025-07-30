@@ -15,11 +15,14 @@
   font-family: "Inter", sans-serif;
 }
 .bg{
-  background-color: #30B2A8;
+  background-color: #E15111;
 }
 .text{
   color: #30B2A8;
 }
 .border{
-  border-color: #30B2A8;
+  border-color: #5F6D88;
+}
+.borderAuth{
+  border-color: #E15111;
 }

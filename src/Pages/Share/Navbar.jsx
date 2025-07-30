@@ -17,9 +17,9 @@ const Navbar = () => {
   return (
     <nav className="bg-[#011F39] py-3 px-6 shadow-md sticky top-0 z-50 shadow-black/20">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <img src={logo} alt="" />
-        </div>
+        <Link to='/' className="flex items-center space-x-4">
+          <img src={logo} alt="" className='' />
+        </Link>
 
         <div className="hidden md:flex space-x-8">
           <Link
@@ -61,7 +61,7 @@ const Navbar = () => {
         <div className="md:flex items-center space-x-4">
           <Link
             to="/signin"
-            className="text-lg bg-[#30B2A8] text-white py-2 px-4 rounded-md"
+            className="text-lg bg text-white py-2 px-4 rounded-md"
           >
             sign in
           </Link>

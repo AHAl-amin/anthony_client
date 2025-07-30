@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { FcGoogle } from 'react-icons/fc';
 import { FaApple } from 'react-icons/fa6';
-import authTwo from '../../../public/image/auth/auth2.png'
+
 import authLogo from '../../../public/image/auth/authLogo.png'
 
 const Registration = () => {
@@ -61,17 +61,18 @@ const Registration = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
-      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#0A192F]  to-[#90E0D8] relative">
-        <div className='flex justify-center h-full items-center'>
-          <img
-            src={authLogo}
-            alt="Logo"
-            className="max-w-[200px] md:max-w-[300px]"
-          />
-        </div>
+      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-[#011F39] relative">
+         <div className='flex justify-center flex-col h-full items-center'>
+                  <img
+                    src={authLogo}
+                    alt="Logo"
+                    className="md:w-[300px]"
+                  />
+                  <p className='text-[#F3DCC2]'>Make your text human with THP</p>
+                </div>
       </div>
 
-      <div className="w-full md:w-[60%] bg-[#011E39] flex items-center justify-center p-4 md:p-8">
+      <div className="w-full md:w-[60%] bg-[#041D35] flex items-center justify-center p-4 md:p-8">
         <div className="w-full max-w-lg">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
@@ -79,15 +80,13 @@ const Registration = () => {
             </div>
           )}
 
-          <div className="text-4xl md:text-5xl flex justify-center items-center text-gray-400 font-bold text-center mb-6">
-            <img src={authTwo} alt="" />
-          </div>
+          
           <div className='mb-2'>
             <p className="text-gray-300 text-center  font-bold text-2xl mb-1">
               Create an account
 
             </p>
-            <p className='text-center text-gray-300'>Have an account? <Link to="/signin" className='text'>Sign in</Link></p>
+            <p className='text-center text-gray-300'>Have an account? <Link to="/signin" className='text-[#E15111]'>Sign in</Link></p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
@@ -101,7 +100,7 @@ const Registration = () => {
                 placeholder="Enter your full name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 bg-[#F8FCFF] border  borderAuth rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none "
               />
             </div>
             <div>
@@ -114,7 +113,7 @@ const Registration = () => {
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 border bg-[#F8FCFF] borderAuth rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
             </div>
 
@@ -129,7 +128,7 @@ const Registration = () => {
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
+                  className="w-full px-4 py-2 border bg-[#F8FCFF] borderAuth rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
                 />
                 <button
                   type="button"
@@ -151,7 +150,7 @@ const Registration = () => {
                   placeholder="Confirm your password"
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
+                  className="w-full px-4 py-2 border bg-[#F8FCFF] borderAuth rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
                 />
                 <button
                   type="button"
@@ -185,11 +184,11 @@ const Registration = () => {
                 />
                 <label htmlFor="agreeTerms" className="ml-2 block text-sm text-gray-700">
                   I agree to the{" "}
-                  <Link href="/terms" className="text hover:underline">
+                  <Link href="/terms" className="text-[#E15111] hover:underline">
                     Terms of Use
                   </Link>{" "}
                   and{" "}
-                  <Link href="/privacy" className="text hover:underline">
+                  <Link href="/privacy" className="text-[#E15111] hover:underline">
                     Privacy Policy
                   </Link>
                 </label>
@@ -201,11 +200,11 @@ const Registration = () => {
                 <div className="flex-grow border-t border-gray-300"></div>
               </div>
              <div className='flex flex-col justify-between items-center gap-6'>
-               <div className=' border border-gray-400 p-2 rounded-xl gap-2 text-center w-66 flex '>
+               <div className=' border borderAuth p-2 rounded-xl gap-2 text-center w-66 flex '>
                 <FcGoogle className='size-8' />
                 <p className='text-xl text-gray-400'>Continue with google</p>
               </div>
-              <div className='border border-gray-400 p-2 rounded-xl gap-2 text-center w-66 flex '>
+              <div className='border borderAuth p-2 rounded-xl gap-2 text-center w-66 flex '>
                 <FaApple  className='size-8'/>
                 <p className='text-xl text-gray-400'>Continue with Apple ID</p>
               </div>

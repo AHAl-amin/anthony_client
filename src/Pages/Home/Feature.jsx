@@ -1,6 +1,6 @@
 function Feature() {
   return (
-    <div className="py-16 px-4 md:max-w-6xl w-full mx-auto">
+    <div className="py-16 px-4 md:max-w-6xl w-full mx-auto inter">
       {/* Header Section */}
       <div className="text-center mb-12">
         <p className="text-xl font-semibold mb-4" style={{ color: "#30B2A8" }}>

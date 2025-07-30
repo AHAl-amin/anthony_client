@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { FcGoogle } from 'react-icons/fc';
 import { FaApple } from 'react-icons/fa6';
-import authTwo from '../../../public/image/auth/auth2.png'
+
 import authLogo from '../../../public/image/auth/authLogo.png'
 
 
@@ -62,17 +62,18 @@ const EmailVerification = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
-      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-gradient-to-b from-[#0A192F]  to-[#90E0D8] relative">
-        <div className='flex justify-center h-full items-center'>
-          <img
-            src={authLogo}
-            alt="Logo"
-            className="max-w-[200px] md:max-w-[300px]"
-          />
-        </div>
+      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-[#011F39] relative">
+         <div className='flex justify-center flex-col h-full items-center'>
+                  <img
+                    src={authLogo}
+                    alt="Logo"
+                    className="md:w-[300px]"
+                  />
+                  <p className='text-[#F3DCC2]'>Make your text human with THP</p>
+                </div>
       </div>
 
-      <div className="w-full md:w-[60%] bg-[#011E39]  flex items-center justify-center p-4 md:p-8">
+      <div className="w-full md:w-[60%] bg-[#041D35]  flex items-center justify-center p-4 md:p-8">
         <div className="w-full max-w-lg">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
@@ -80,9 +81,7 @@ const EmailVerification = () => {
             </div>
           )}
 
-          <div className="text-4xl md:text-5xl text-gray-400 font-bold flex justify-center mb-6">
-            <img src={authTwo} alt="" />
-          </div>
+          
            <p className="text-gray-300 text-center  font-bold text-2xl mb-4">
               Password Reset
 
@@ -100,7 +99,7 @@ const EmailVerification = () => {
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border bg-[#F8FCFF] border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 borderAuth bg-[#F8FCFF] border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
             </div>
 

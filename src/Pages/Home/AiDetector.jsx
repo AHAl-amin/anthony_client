@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import aiOne from '../../../public/image/home/ai1.png'
 import aiTwo from '../../../public/image/home/ai2.png'
 import aiThree from '../../../public/image/home/ai3.png'
+import aiFour from '../../../public/image/home/ai4.png'
 
 function AiDetector() {
     const [selectedCard, setSelectedCard] = useState(null);
@@ -43,10 +44,21 @@ function AiDetector() {
                 'Get detailed insights on content origin.',
             ],
         },
+        {
+            title: 'Students',
+            image: aiFour,
+            description: 'Protect your content from copy penalties and keep your rankings safe.',
+            features: [
+                'Ensure your content gets indexed by using our AI Checker.',
+                'Verify authenticity of freelancer or agency articles.',
+                'Publish unique content that captivates your audience.',
+                'Get detailed insights on content origin.',
+            ],
+        },
     ];
 
     return (
-        <div className="py-16 px-4" style={{ backgroundColor: '#011E39' }}>
+        <div className="py-16 px-4 inter" style={{ backgroundColor: '#011E39' }}>
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
@@ -54,12 +66,12 @@ function AiDetector() {
                 </div>
 
                 {/* User Type Cards */}
-                <div className="grid md:grid-cols-3 gap-30 mb-8">
+                <div className="grid md:grid-cols-4 gap-10 mb-8">
                     {cards.map((card, index) => (
                         <div
                             key={index}
                             //   className="bg-white rounded-2xl p-6 text-center shadow-lg cursor-pointer"
-                            className={`bg-[#90E0D8] rounded-2xl p-6 text-center shadow-lg cursor-pointer ${selectedCard?.title === card.title ? 'border-b-4 border-[#90E0D8]' : 'border-transparent'
+                            className={`   text-center shadow-lg cursor-pointer ${selectedCard?.title === card.title ? 'border-b-2 pb-3  border-[#E15111]' : 'border-transparent'
                                 }`}
                             onClick={() => setSelectedCard(card)}
                         >
@@ -67,10 +79,10 @@ function AiDetector() {
                                 <img
                                     src={card.image}
                                     alt={`${card.title} Image`}
-                                    className="w-20 h-20 rounded-lg mx-auto object-cover"
+                                    className="w-full h-50 rounded-lg mx-auto object-cover object-center"
                                 />
                             </div>
-                            <h3 className="text-lg font-semibold" style={{ color: '#111827' }}>
+                            <h3 className="text-lg font-semibold" style={{ color: '#FFFFFF' }}>
                                 {card.title}
                             </h3>
                         </div>
@@ -79,14 +91,14 @@ function AiDetector() {
 
                 {/* Detailed Section */}
                 {selectedCard && (
-                    <div className="bg-[#90E0D8] rounded-2xl p-8 shadow-lg">
-                        <div className="grid md:grid-cols-2 gap-8">
+                    <div className="bg-gray-100 max-w-5xl mx-auto mt-10  rounded-2xl p-8 shadow-lg">
+                        <div className="grid md:grid-cols-2 gap-6">
                             {/* Left side - Image */}
                             <div className="order-2 md:order-1">
                                 <img
                                     src={selectedCard.image}
                                     alt={`${selectedCard.title} with VR headset`}
-                                    className="w-full h-[600px] object-cover object-center rounded-xl"
+                                    className=" h-full w-[380px] rounded-xl"
                                 />
                             </div>
 
