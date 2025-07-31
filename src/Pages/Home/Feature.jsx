@@ -6,7 +6,7 @@ function Feature() {
         <p className="text-xl font-semibold mb-4" style={{ color: "#30B2A8" }}>
           Features
         </p>
-        <h2 className="text-4xl font-bold mb-4" style={{ color: "#111827" }}>
+        <h2 className="md:text-4xl text-2xl font-bold mb-4" style={{ color: "#111827" }}>
           Everything you need for AI text humanization
         </h2>
         <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6B7280" }}>

@@ -68,11 +68,11 @@ function PricingPlan() {
     };
 
     return (
-        <section className="relative md:max-w-6xl md:w-[60%] mx-auto py-16 inter">
-            <div className="relative py-20">
-                <div className="flex flex-col items-center justify-center">
-                    <h1 className="md:text-4xl text-2xl mb-2 md:font-bold text-[#111827]">Choose the plan that fits your writing needs</h1>
-                    <p className="text-lg text-gray-500 max-w-2xl text-center font-sans">
+        <section className="relative md:max-w-6xl md:w-[60%] mx-auto md:py-16 py-10 px-6  inter">
+            <div className="relative md:py-20">
+                <div className="flex flex-col items-center justify-center py-8">
+                    <h1 className="md:text-4xl text-center text-[16px] mb-2 md:font-bold text-[#111827]">Choose the plan that fits your writing needs</h1>
+                    <p className="text-[16px] text-gray-500 max-w-2xl text-center font-sans">
                         AI-detection removal that keeps your tone, intent, and privacy intact
                     </p>
                 </div>
@@ -81,13 +81,13 @@ function PricingPlan() {
                 {plans.length === 0 ? (
                     <p className="text-center text-gray-700 text-lg">No pricing plans available.</p>
                 ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-16 sm:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 md:gap-16 gap-8 ">
                         {plans.map((plan) => (
                             <div
                                 key={plan.id}
                                 className={`
-                  relative bg-white/90 backdrop-blur-sm rounded-3xl border-2 border-transparent shadow 
-                 transition-all duration-300 hover:-translate-y-2 
+                  relative bg-white/90 backdrop-blur-sm rounded-3xl border-2 border-transparent hover:border-[#1e4db2]  shadow 
+                 transition-all duration-300 hover:-translate-y-2  
                   ${selectedPlan === plan.id ? "ring-2 ring-amber-500" : ""}
                   flex flex-col
                   

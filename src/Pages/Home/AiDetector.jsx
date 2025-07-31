@@ -62,7 +62,7 @@ function AiDetector() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-white mb-8">Our AI Detector is Helpful to...</h2>
+                    <h2 className="md:text-3xl text-2xl font-bold text-white mb-8">Our AI Detector is Helpful to...</h2>
                 </div>
 
                 {/* User Type Cards */}
@@ -107,7 +107,7 @@ function AiDetector() {
                                 <h3 className="text-2xl font-bold mb-3" style={{ color: '#111827' }}>
                                     {selectedCard.title}
                                 </h3>
-                                <p className="mb-6" style={{ color: '#2563EB' }}>
+                                <p className="mb-6" style={{ color: '#30B2A8' }}>
                                     {selectedCard.description}
                                 </p>
 

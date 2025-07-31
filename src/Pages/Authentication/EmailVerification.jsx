@@ -62,18 +62,18 @@ const EmailVerification = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
-      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-[#011F39] relative">
+      <div className="w-full md:w-[40%] h-[20vh] md:h-screen bg-[#011F39] relative">
          <div className='flex justify-center flex-col h-full items-center'>
                   <img
                     src={authLogo}
                     alt="Logo"
                     className="md:w-[300px]"
                   />
-                  <p className='text-[#F3DCC2]'>Make your text human with THP</p>
+                  
                 </div>
       </div>
 
-      <div className="w-full md:w-[60%] bg-[#041D35]  flex items-center justify-center p-4 md:p-8">
+      <div className="w-full md:h-screen md:w-[60%] bg-[#041D35]  flex items-center justify-center px-6 py-16 md:p-8">
         <div className="w-full max-w-lg">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">

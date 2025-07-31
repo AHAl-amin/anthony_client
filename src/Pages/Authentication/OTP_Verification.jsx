@@ -61,18 +61,18 @@ const OTP_Verification = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
-      <div className="w-full md:w-[40%] h-[30vh] md:h-screen bg-[#011F39]  relative">
-         <div className='flex justify-center flex-col h-full items-center'>
-                  <img
-                    src={authLogo}
-                    alt="Logo"
-                    className="md:w-[300px]"
-                  />
-                  <p className='text-[#F3DCC2]'>Make your text human with THP</p>
-                </div>
+      <div className="w-full md:w-[40%] h-[20vh] md:h-screen bg-[#011F39]  relative">
+        <div className='flex justify-center flex-col h-full items-center'>
+          <img
+            src={authLogo}
+            alt="Logo"
+            className="md:w-[300px]"
+          />
+          
+        </div>
       </div>
 
-      <div className="w-full md:w-[60%] bg-[#041D35]   flex items-center justify-center p-4 md:p-8">
+      <div className="w-full md:h-screen md:w-[60%] bg-[#041D35]   flex items-center justify-center py-16 px-6 md:p-8">
         <div className="w-full max-w-lg">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
@@ -80,16 +80,16 @@ const OTP_Verification = () => {
             </div>
           )}
 
-          
-           <p className="text-gray-300 text-center  font-bold text-2xl mb-4">
-             Verify your OTP
 
-            </p>
+          <p className="text-gray-300 text-center  font-bold text-2xl mb-4">
+            Verify your OTP
+
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-4  bg-gray-100 p-6 py-10 rounded-2xl">
 
             <div>
-             
+
               <input
                 id="email"
                 type="email"
@@ -103,20 +103,20 @@ const OTP_Verification = () => {
 
             <div>
 
-             <Link to="/reset_password">
-              <button
-                type="submit"
-                disabled={isLoading}
-                className={`w-full bg text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-                  }`}
-              >
-                {isLoading ? 'Sending...' : 'Send'}
-              </button>
-             </Link>
+              <Link to="/reset_password">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className={`w-full bg text-white rounded-lg px-6 py-3 mt-6 text-lg font-medium transition-colors hover:bg-[#2A5CE6] ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+                    }`}
+                >
+                  {isLoading ? 'Sending...' : 'Send'}
+                </button>
+              </Link>
 
 
 
-             
+
             </div>
 
           </form>

@@ -166,8 +166,8 @@ export default function UserSettings() {
                 </button>
               </div>
             </div>
-            <div className="flex justify-between items-center">
-              <button className="flex items-center px-3 py-1.5 bg text-white rounded-md hover:bg transition">
+            <div className="flex justify-between gap-4 items-center">
+              <button className="flex items-center px-3 py-1.5 bg text-white md:text-[14px] text-[12px] rounded-md hover:bg transition">
                 <Save className="h-4 w-4 mr-1" />
                 Update Password
               </button>

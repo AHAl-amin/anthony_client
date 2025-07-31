@@ -123,7 +123,7 @@ function AiDetection() {
   );
 
   return (
-    <div className="space-y-6 px-6">
+    <div className="space-y-6 px-6 ">
       <div>
         <h1 className="text-2xl font-semibold text-gray-800">
           AI Detection Scores

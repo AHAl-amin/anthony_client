@@ -105,7 +105,7 @@ function UserDashboardHome() {
   }
 
   return (
-    <div className="container mx-auto my-10 max-w-7xl">
+    <div className="md:container md:mx-auto mx-4 my-10 max-w-7xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">AI Detection Remover</h1>
         <p className="text-gray-400">Convert AI-generated content to human-like text that passes AI detection</p>
@@ -118,7 +118,7 @@ function UserDashboardHome() {
           <span className="text-sm text-gray-600">
             Free Plan: {MAX_WORDS - wordsRemaining} / {MAX_WORDS} words used
           </span>
-          <span className="text-sm font-medium bg text-gray-200 p-3 rounded-xl">{wordsRemaining} words remaining</span>
+          <span className="md:text-sm text-[8px] font-medium bg text-gray-200 p-3 rounded-xl">{wordsRemaining} words remaining</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div

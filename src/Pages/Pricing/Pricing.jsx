@@ -8,7 +8,7 @@ function Pricing() {
   return (
     <div>
       <PricingPlan/>
-      <CustomDeal/>
+      <CustomDeal />
       <FraQuestion/>
       <StayUpToDate/>
     </div>

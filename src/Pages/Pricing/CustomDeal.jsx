@@ -3,7 +3,7 @@ import { IoMdCheckmark } from "react-icons/io";
 
 function CustomDeal() {
   return (
-    <section className="relative w-full md:max-w-6xl mx-auto p-6 bg-white rounded-xl shadow-lg border my-10 border-gray-200 inter">
+    <section className="relative  md:max-w-6xl md:mx-auto mx-4 p-6  bg-white rounded-xl shadow-lg border my-10 border-gray-200 inter">
       <div className="flex justify-between items-start">
         <div>
           <h3 className="text-2xl font-bold text-gray-900">Enterprise</h3>
@@ -31,11 +31,11 @@ function CustomDeal() {
             </li>
           </ul>
         </div>
-        <button className="bg text-white px-4 py-2 rounded-full cursor-pointer transition-colors">
+        <button className="bg text-white md:text-[14px]  md:px-4 md:py-2 p-2 text-[10px] w-30  rounded-full cursor-pointer transition-colors">
           Custom Deals
         </button>
       </div>
-      <button className="w-full mt-6  text-gray-700 py-2 rounded-lg   border cursor-pointer hover:text-gray-500 transition-colors">
+      <button className="w-full mt-6  text-gray-700 py-2 rounded-lg bg   cursor-pointer hover:text-gray-800 transition-colors">
         Contact Sales
       </button>
     </section>
