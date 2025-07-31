@@ -118,7 +118,7 @@ function UserDashboardHome() {
           <span className="text-sm text-gray-600">
             Free Plan: {MAX_WORDS - wordsRemaining} / {MAX_WORDS} words used
           </span>
-          <span className="md:text-sm text-[12px] font-medium bg text-gray-200 md:p-3 py-1 px-2 rounded-xl">{wordsRemaining} words remaining</span>
+          <span className="md:text-sm text-[12px] font-medium bg text-center text-gray-200 md:p-3 py-1 px-2 rounded-xl">{wordsRemaining} words remaining</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div
@@ -198,7 +198,7 @@ function UserDashboardHome() {
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Humanization Settings</h2>
           <div className="space-y-6 p-6 rounded-lg shadow-sm border border-gray-200">
-            <label className=" text-gray-700 font-medium  flex gap-4 items-center mb-6"> <RxActivityLog className="rotate-90" />Humanization Level</label>
+            <label className=" text-gray-700 font-medium  flex gap-4 items-center mb-6"> <RxActivityLog className="rotate-90 text-[#E15111]" />Humanization Level</label>
             <div className="flex space-x-2 bg-gray-100 p-1 rounded-md">
               <button
                 className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${humanizationLevel === "low" ? "bg-[#e14f1141] text-gray-700" : "text-gray-700 hover:bg-gray-200"

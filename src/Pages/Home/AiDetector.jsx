@@ -10,7 +10,7 @@ import aiFour from '../../../public/image/home/ai4.png'
 function AiDetector() {
     const [selectedCard, setSelectedCard] = useState(null);
 
-     const cards = [
+    const cards = [
         {
             title: 'SEO Agencies',
             image: aiTwo,
@@ -70,8 +70,7 @@ function AiDetector() {
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            //   className="bg-white rounded-2xl p-6 text-center shadow-lg cursor-pointer"
-                            className={`   text-center cursor-pointer ${selectedCard?.title === card.title ? 'border-b-2 pb-3  border-[#E15111]' : 'border-transparent'
+                            className={`text-center cursor-pointer ${selectedCard?.title === card.title ? 'border-b-2 pb-3 border-[#E15111]' : 'border-transparent'
                                 }`}
                             onClick={() => setSelectedCard(card)}
                         >
@@ -85,13 +84,37 @@ function AiDetector() {
                             <h3 className="text-lg font-semibold" style={{ color: '#FFFFFF' }}>
                                 {card.title}
                             </h3>
+
+                            {/* Show details below card only on small screens */}
+                            <div className="block md:hidden">
+                                {selectedCard?.title === card.title && (
+                                    <div className="bg-gray-100 mt-6 rounded-2xl p-6 shadow-lg text-left">
+                                        <img
+                                            src={card.image}
+                                            alt={`${card.title} detailed image`}
+                                            className="w-full h-auto mb-4 rounded-xl"
+                                        />
+                                        <h3 className="text-xl font-bold mb-2 text-[#111827]">{card.title}</h3>
+                                        <p className="mb-4 text-[#30B2A8]">{card.description}</p>
+                                        <ul className="space-y-3">
+                                            {card.features.map((feature, idx) => (
+                                                <li key={idx} className="flex items-start space-x-2">
+                                                    <span className="w-3 h-3 bg-[#111827] rounded-full mt-1 flex-shrink-0"></span>
+                                                    <span className="text-[#111827]">{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     ))}
                 </div>
 
+
                 {/* Detailed Section */}
                 {selectedCard && (
-                    <div className="bg-gray-100 max-w-5xl mx-auto mt-10  rounded-2xl p-8 shadow-lg">
+                    <div className="bg-gray-100 max-w-5xl mx-auto mt-10 hidden md:block  rounded-2xl p-8 shadow-lg">
                         <div className="grid md:grid-cols-2 gap-6">
                             {/* Left side - Image */}
                             <div className="order-2 md:order-1">

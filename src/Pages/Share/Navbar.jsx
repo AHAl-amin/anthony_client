@@ -137,7 +137,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/signin"
-              className="text-lg bg-[#90E0D8] text-white py-2 px-4 rounded-md w-fit"
+              className="text-lg bg-[#E15111] text-white py-2 px-4 rounded-md w-fit"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Sign In
