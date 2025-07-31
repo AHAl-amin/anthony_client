@@ -13,8 +13,8 @@ function Banner() {
           <h2 className='text-[#FFFFFF99] md:text-4xl text-2xl font-semibold text-center'>For SEO Professionals & More</h2>
           <p className='text-gray-300 text-center md:text-lg text-[12px] w-full md:w-2/3 mx-auto   '>Make AI-generated content undetectable to bypass AI content filters while maintaining SEO value. Perfect for agencies, marketers, and content creators.</p>
           <div className='flex justify-center gap-6 '>
-            <Link to="/user_dashboard" className='btn border-none text-[#FFFFFF]  bg'>Start Humanizing</Link>
-            <Link to="/pricing" className='btn bg text-[#FFFFFF] border-none'>View Pricing</Link>
+            <Link to="/user_dashboard" className='btn shadow-none border-none text-[#FFFFFF]  bg'>Start Humanizing</Link>
+            <Link to="/pricing" className='btn bg shadow-none text-[#FFFFFF] border-none'>View Pricing</Link>
           </div>
         </div>
       </div>

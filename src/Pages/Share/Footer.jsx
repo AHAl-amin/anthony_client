@@ -11,11 +11,11 @@ function Footer() {
         </div>
         <div className='flex justify-center gap-6 '>
           <Link to="/user_dashboard">
-          <button className='btn  text-[#FFFFFF] border-none bg '>Get Started</button>
+          <button className='btn  text-[#FFFFFF] border-none bg shadow-none '>Get Started</button>
           </Link>
           <Link to="/pricing">
           
-          <button className='btn bg text-[#FFFFFF] border-none'>View Pricing</button>
+          <button className='btn bg text-[#FFFFFF] border-none shadow-none'>View Pricing</button>
           </Link>
         </div>
 

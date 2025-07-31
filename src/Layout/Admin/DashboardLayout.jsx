@@ -115,12 +115,12 @@ export default function DashboardLayout() {
         <header className="h-16 bg-white border-b border-gray-200">
           <div className="h-full px-4 flex items-center justify-between">
             <div className=" items-center gap-4 hidden md:flex">
-              <button
+              {/* <button
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className="p-2 hover:bg-gray-200 rounded-full transition-colors duration-300 hidden md:block"
               >
                 {isCollapsed ? <ChevronsRight size={20} /> : <ChevronsLeft size={20} />}
-              </button>
+              </button> */}
               <div className="flex flex-col">
                 <span className="text-gray-700 font-bold text-xl">{selectedItem}</span>
                 <h1>

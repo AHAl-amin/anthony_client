@@ -150,11 +150,11 @@ function AddRoles() {
           <button className="inline-flex items-center cursor-pointer border border-gray-300 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 hover:bg-gray-100 text-gray-700">
             Cancel
           </button>
-          <button className="inline-flex  cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white hover:bg-blue-700 h-10 px-4 py-2">
+          <button className="inline-flex  cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#E15111] text-white h-10 px-4 py-2">
             Save Role
           </button>
         </div>
-      </main>
+      </main>s
     </div>
   );
 }

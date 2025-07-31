@@ -94,7 +94,7 @@ export default function AddPlan() {
         </div>
       </div>
 
-      <div className="bg-[#DDE7FF] p-6 rounded-lg mb-8 border border-gray-200">
+      <div className="bg-gray-200 p-6 rounded-lg mb-8 border border-gray-200">
         <h3 className="text-lg font-medium text-gray-900 mb-4">Add Features</h3>
         <div className="flex items-center gap-2 mb-4">
           <input
@@ -147,7 +147,7 @@ export default function AddPlan() {
       <div className="flex justify-center w-full ">
         <button
           onClick={handleSave}
-          className="bg-blue-600/50 hover:bg-blue-700 cursor-pointer md:w-1/2 text-white font-medium py-3 px-8 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+          className="bg-[#E15111] hover:bg-[#E15111]/90 cursor-pointer md:w-1/2 text-white font-medium py-3 px-8 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
         >
           Save Changes
         </button>
