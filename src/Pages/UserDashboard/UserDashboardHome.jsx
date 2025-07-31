@@ -118,7 +118,7 @@ function UserDashboardHome() {
           <span className="text-sm text-gray-600">
             Free Plan: {MAX_WORDS - wordsRemaining} / {MAX_WORDS} words used
           </span>
-          <span className="md:text-sm text-[8px] font-medium bg text-gray-200 p-3 rounded-xl">{wordsRemaining} words remaining</span>
+          <span className="md:text-sm text-[12px] font-medium bg text-gray-200 md:p-3 py-1 px-2 rounded-xl">{wordsRemaining} words remaining</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div
@@ -136,7 +136,7 @@ function UserDashboardHome() {
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Input Text</h2>
             <textarea
-              className="w-full p-3 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-[#22C55E] focus:border-transparent resize-y min-h-[150px]"
+              className="w-full p-3 border border-gray-100 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-[#22C55E] focus:border-transparent resize-y min-h-[150px]"
               rows={8}
               placeholder="Paste your AI-generated text here to humanize it..."
               value={inputText}
@@ -161,7 +161,7 @@ function UserDashboardHome() {
               <input
                 type="checkbox"
                 id="terms"
-                className="h-4 w-4 text-[#E15111] border-gray-300 rounded focus:ring-[bg-[#22C55E]"
+                className="h-4 w-4 text-[#E15111] border-gray-100 rounded focus:ring-[bg-[#22C55E]"
                 checked={agreedToTerms}
                 onChange={(e) => setAgreedToTerms(e.target.checked)}
               />

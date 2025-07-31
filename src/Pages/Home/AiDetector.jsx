@@ -71,7 +71,7 @@ function AiDetector() {
                         <div
                             key={index}
                             //   className="bg-white rounded-2xl p-6 text-center shadow-lg cursor-pointer"
-                            className={`   text-center shadow-lg cursor-pointer ${selectedCard?.title === card.title ? 'border-b-2 pb-3  border-[#E15111]' : 'border-transparent'
+                            className={`   text-center cursor-pointer ${selectedCard?.title === card.title ? 'border-b-2 pb-3  border-[#E15111]' : 'border-transparent'
                                 }`}
                             onClick={() => setSelectedCard(card)}
                         >

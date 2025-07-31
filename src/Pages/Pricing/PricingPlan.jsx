@@ -117,7 +117,7 @@ function PricingPlan() {
                                     </ul>
                                     <button
                                         onClick={() => handleGetStarted(plan)}
-                                        className=" text-black  bg cursor-pointer  py-2 px-4 rounded-lg flex gap-2 items-center justify-center mt-auto  hover:text-gray-200 transition-colors"
+                                        className=" text-gray-100  bg cursor-pointer  py-2 px-4 rounded-lg flex gap-2 items-center justify-center mt-auto  hover:text-gray-200 transition-colors"
                                     >
                                         <span>{plan.buttonText}</span>
 

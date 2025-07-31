@@ -103,7 +103,7 @@ const OTP_Verification = () => {
 
             <div>
 
-              <Link to="/reset_password">
+              <Link to="/">
                 <button
                   type="submit"
                   disabled={isLoading}

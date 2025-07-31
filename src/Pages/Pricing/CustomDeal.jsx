@@ -35,7 +35,7 @@ function CustomDeal() {
           Custom Deals
         </button>
       </div>
-      <button className="w-full mt-6  text-gray-700 py-2 rounded-lg bg   cursor-pointer hover:text-gray-800 transition-colors">
+      <button className="w-full mt-6  text-gray-700 py-2 rounded-lg hover:bg-[#E15111] hover:text-gray-100 border2 border cursor-pointer  transition-colors">
         Contact Sales
       </button>
     </section>

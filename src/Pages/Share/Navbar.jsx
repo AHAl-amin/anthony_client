@@ -64,7 +64,7 @@ const Navbar = () => {
 
         {/* Desktop User Options */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link to="/signin" className="text-lg bg-[#90E0D8] text-white py-2 px-4 rounded-md">
+          <Link to="/signin" className="text-lg bg-[#E15111] text-white py-2 px-4 rounded-md">
             Sign In
           </Link>
           <div className="relative">
@@ -94,7 +94,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/signin"
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                      className="block px-4 py-2  text-gray-800 "
                       onClick={() => setIsDropdownOpen(false)}
                     >
                       Sign Out

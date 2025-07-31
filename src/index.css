@@ -21,7 +21,11 @@
   color: #30B2A8;
 }
 .border{
-  border-color: #5F6D88;
+  border-color: #d2d3d4;
+}
+
+.border2{
+  border-color: #E15111;
 }
 .borderAuth{
   border-color: #E15111;
