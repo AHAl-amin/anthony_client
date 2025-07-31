@@ -98,7 +98,7 @@ function Billing() {
         {pricingData.length === 0 ? (
           <p className="text-center text-gray-700 text-lg">No pricing plans available.</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-16 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-16 gap-10 sm:gap-8">
             {pricingData.map((plan) => (
               <div
                 key={plan.id}
@@ -143,7 +143,7 @@ function Billing() {
       </div>
 
       {isModalOpen && editPlan && (
-        <div className="fixed inset-0  backdrop-blur bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 md:m-2 m-3  backdrop-blur bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg w-full max-w-md shadow">
             <h2 className="text-2xl font-bold mb-4">Edit Plan: {editPlan.name}</h2>
             <form>

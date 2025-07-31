@@ -156,11 +156,11 @@ export default function PaymentHistory() {
                 </td>
                 <td className="py-3 px-6 text-gray-700">{transaction.date}</td>
                 <td className="py-3 px-6 text-gray-700">{transaction.paymentMethod}</td>
-                <td className="py-3 px-6 text-right pr-6 ">
+                <td className="py-3 px-6 text-right pr-6  md:space-y-0 space-y-2 ">
                   {transaction.actions.map((action) => (
                     <button
                       key={action}
-                      className={`ml-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 px-3 py-1 cursor-pointer ${getActionButtonClasses(action)}`}
+                      className={`ml-2 inline-flex  items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 px-3 py-1 cursor-pointer ${getActionButtonClasses(action)}`}
                       onClick={() => action === "Details" && handleDetailsClick(transaction)}
                     >
                       {action}

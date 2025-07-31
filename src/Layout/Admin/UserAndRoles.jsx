@@ -144,19 +144,19 @@ function UserAndRoles() {
   };
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6 ">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-800">
+          <h1 className="md:text-2xl text-xl font-semibold text-gray-800">
             Users & Roles
           </h1>
-          <p className="text-gray-500">
+          <p className="text-gray-500 md:text-xl text-sm">
             Manage users and their access permissions.
           </p>
         </div>
-        <Link to="/admin_dashboard/add_rols" className="px-4 py-2 bg text-white rounded-md  flex items-center">
+        <Link to="/admin_dashboard/add_rols" className="px-4 py-2 bg w-40 text-white rounded-md  flex items-center">
           <UserPlusIcon size={16} className="mr-2" />
-          Add User
+        Add User
         </Link>
       </div>
       <Card>

@@ -65,12 +65,12 @@ const AdminOverview = () => {
   ];
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6 md:p-6">
       <div>
         <h1 className="text-2xl font-semibold text-gray-800">Dashboard Overview</h1>
         <p className="text-gray-500">Welcome back! Here's what's happening with your content.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-2">
         <Card className="transition-transform hover:-translate-y-1">
           <div className="flex justify-between items-start">
             <div>
